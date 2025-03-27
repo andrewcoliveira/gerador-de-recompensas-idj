@@ -8,7 +8,7 @@ function rollDie(rolls, die) {
 }
 
 // Gerar o tipo de equipamento e caso seja de material especial
-function basicGenerator(type, isSpecialMaterial = false) {
+function equipmentGenerator(type, isSpecialMaterial = false) {
 	if (!type || typeof type !== 'object') return null;
 
 	const dHundred = rollDie(1, 100);

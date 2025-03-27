@@ -1,41 +1,41 @@
 {
 	"1/3": {
 		"60": "-",
-		"75": "return basicGenerator(items)",
-		"100": "return basicGenerator(weapons)"
+		"75": "return equipmentGenerator(items)",
+		"100": "return equipmentGenerator(weapons)"
 	},
 	"1/2": {
 		"55": "-",
-		"75": "return basicGenerator(items)",
-		"100": "return basicGenerator(weapons)"
+		"75": "return equipmentGenerator(items)",
+		"100": "return equipmentGenerator(weapons)"
 	},
 	"1": {
 		"50": "-",
-		"75": "return basicGenerator(items)",
-		"95": "return basicGenerator(weapons)",
-		"100": "return basicGenerator(armors)"
+		"75": "return equipmentGenerator(items)",
+		"95": "return equipmentGenerator(weapons)",
+		"100": "return equipmentGenerator(armors)"
 	},
 	"2": {
 		"45": "-",
-		"70": "return basicGenerator(items)",
-		"95": "return basicGenerator(weapons)",
-		"100": "return basicGenerator(armors)"
+		"70": "return equipmentGenerator(items)",
+		"95": "return equipmentGenerator(weapons)",
+		"100": "return equipmentGenerator(armors)"
 	},
 	"3": {
 		"40": "-",
-		"65": "return basicGenerator(items)",
-		"90": "return basicGenerator(weapons)",
-		"100": "return basicGenerator(armors)"
+		"65": "return equipmentGenerator(items)",
+		"90": "return equipmentGenerator(weapons)",
+		"100": "return equipmentGenerator(armors)"
 	},
 	"4": {
 		"30": "-",
-		"70": "return basicGenerator(weapons)",
-		"95": "return basicGenerator(armors)",
+		"70": "return equipmentGenerator(weapons)",
+		"95": "return equipmentGenerator(armors)",
 		"100": "Arma obra-prima"
 	},
 	"5": {
 		"25": "-",
-		"60": "return basicGenerator(armors)",
+		"60": "return equipmentGenerator(armors)",
 		"90": "Arma obra-prima",
 		"100": "Armadura obra-prima"
 	},
@@ -43,30 +43,30 @@
 		"25": "-",
 		"65": "Arma obra-prima",
 		"90": "Armadura obra-prima",
-		"100": "return basicGenerator(weapons, true)"
+		"100": "return equipmentGenerator(weapons, true)"
 	},
 	"7": {
 		"25": "-",
 		"65": "Armadura obra-prima",
-		"90": "return basicGenerator(weapons, true)",
-		"100": "return basicGenerator(armors, true)"
+		"90": "return equipmentGenerator(weapons, true)",
+		"100": "return equipmentGenerator(armors, true)"
 	},
 	"8": {
 		"25": "-",
-		"70": "return basicGenerator(weapons, true)",
-		"90": "return basicGenerator(armors, true)",
+		"70": "return equipmentGenerator(weapons, true)",
+		"90": "return equipmentGenerator(armors, true)",
 		"100": "Item mágico menor"
 	},
 	"9": {
 		"25": "-",
-		"65": "return basicGenerator(weapons, true)",
-		"85": "return basicGenerator(armors, true)",
+		"65": "return equipmentGenerator(weapons, true)",
+		"85": "return fator(armors, true)",
 		"100": "Item mágico menor"
 	},
 	"10": {
 		"25": "-",
-		"55": "return basicGenerator(weapons, true)",
-		"80": "return basicGenerator(armors, true)",
+		"55": "return equipmentGenerator(weapons, true)",
+		"80": "return equipmentGenerator(armors, true)",
 		"100": "Item mágico menor"
 	},
 	"11": { "50": "-", "90": "Item mágico menor", "100": "Item mágico médio" },

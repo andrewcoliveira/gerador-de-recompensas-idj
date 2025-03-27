@@ -10,6 +10,6 @@
 	"59": "Lamelar",
 	"70": "O-yoroi",
 	"80": "Suchiiru",
-	"90": "return basicGenerator(clothings);",
+	"90": "return equipmentGenerator(clothings);",
 	"100": "Yoroi"
 }
