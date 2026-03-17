@@ -1,91 +1,91 @@
 {
-	"10": {
-		"price": "return rollDie(1, 10) * 10",
-		"examples": [
-			"Vaso de cerâmica esmaltado em cor simples",
-			"Estatueta de marfim entalhado",
-			"Pequeno bracelete de ouro finamente trabalhado"
-		]
-	},
-	"25": {
-		"price": "return rollDie(3, 6) * 10",
-		"examples": [
-			"Vestimentas de seda",
-			"Pente de prata com muitos citrinos",
-			"Lanterna de seda em forma de pagode",
-			"Vaso de calcedônia decorado com crisântemos"
-		]
-	},
-	"40": {
-		"price": "return rollDie(1, 6) * 100",
-		"examples": [
-			"Pintura grande e colorida em papel de seda",
-			"Karakuri de madeira com ornamentos de lápis-lazúli",
-			"Candelabro de prata com flores de lótus esculpidas"
-		]
-	},
-	"50": {
-		"price": "return rollDie(1, 10) * 100",
-		"examples": [
-			"Conjunto de estatuetas de marfim de três vanaras em meditação",
-			"Tanto cerimonial ornada em ouro com pérola dourada na ponta do cabo"
-		]
-	},
-	"60": {
-		"price": "return rollDie(2, 6) * 100",
-		"examples": [
-			"Biwa de madeira exótica decorado com turmalinas",
-			"Conjunto de chá em cerâmica decorado com fios de ouro"
-		]
-	},
-	"70": {
-		"price": "return rollDie(3, 6) * 100",
-		"examples": [
-			"Vaso de coral esmaltado com pinturas delicadas",
-			"Ídolo de prata maciça com olhos de âmbar"
-		]
-	},
-	"80": {
-		"price": "return rollDie(4, 6) * 100",
-		"examples": [
-			"Colar de oração com contas de ágata",
-			"Conjunto de pratos de cerâmica pintados e decorados em ouro"
-		]
-	},
-	"85": {
-		"price": "return rollDie(5, 6) * 100",
-		"examples": [
-			"Altar de madeira exótica com decorações de flor de lótus",
-			"Prato de jade em forma de crisântemo"
-		]
-	},
-	"90": {
-		"price": "return rollDie(1, 4) * 1000",
-		"examples": [
-			"Katana ornamental em forma de dragão celestial",
-			"Gongo de bronze folheado a ouro",
-			"Espelho de prata com cabo esculpido em jade"
-		]
-	},
-	"95": {
-		"price": "return rollDie(1, 6) * 1000",
-		"examples": [
-			"Estatueta de falcão em bronze em um galho natural envernizado",
-			"Tiara ornada com águas-marinhas"
-		]
-	},
-	"99": {
-		"price": "return rollDie(2, 4) * 1000",
-		"examples": [
-			"Estatueta de jade de um dragão celestial",
-			"Daisho ornamental esmaltado em negro decorado com pérolas negras"
-		]
-	},
-	"100": {
-		"price": "return rollDie(2, 6) * 1000",
-		"examples": [
-			"Jogo de chá em cerâmica esmaltada decorado com esmeraldas",
-			"Anel de ouro com jade celestial"
-		]
-	}
+  "10": {
+    "price": { "rolls": 1, "die": 10, "mult": 10 },
+    "examples": [
+      "Vaso de cerâmica esmaltado em cor simples",
+      "Estatueta de marfim entalhado",
+      "Pequeno bracelete de ouro finamente trabalhado"
+    ]
+  },
+  "25": {
+    "price": { "rolls": 3, "die": 6, "mult": 10 },
+    "examples": [
+      "Vestimentas de seda",
+      "Pente de prata com muitos citrinos",
+      "Lanterna de seda em forma de pagode",
+      "Vaso de calcedônia decorado com crisântemos"
+    ]
+  },
+  "40": {
+    "price": { "rolls": 1, "die": 6, "mult": 100 },
+    "examples": [
+      "Pintura grande e colorida em papel de seda",
+      "Karakuri de madeira com ornamentos de lápis-lazúli",
+      "Candelabro de prata com flores de lótus esculpidas"
+    ]
+  },
+  "50": {
+    "price": { "rolls": 1, "die": 10, "mult": 100 },
+    "examples": [
+      "Conjunto de estatuetas de marfim de três vanaras em meditação",
+      "Tanto cerimonial ornada em ouro com pérola dourada na ponta do cabo"
+    ]
+  },
+  "60": {
+    "price": { "rolls": 2, "die": 6, "mult": 100 },
+    "examples": [
+      "Biwa de madeira exótica decorado com turmalinas",
+      "Conjunto de chá em cerâmica decorado com fios de ouro"
+    ]
+  },
+  "70": {
+    "price": { "rolls": 3, "die": 6, "mult": 100 },
+    "examples": [
+      "Vaso de coral esmaltado com pinturas delicadas",
+      "Ídolo de prata maciça com olhos de âmbar"
+    ]
+  },
+  "80": {
+    "price": { "rolls": 4, "die": 6, "mult": 100 },
+    "examples": [
+      "Colar de oração com contas de ágata",
+      "Conjunto de pratos de cerâmica pintados e decorados em ouro"
+    ]
+  },
+  "85": {
+    "price": { "rolls": 5, "die": 6, "mult": 100 },
+    "examples": [
+      "Altar de madeira exótica com decorações de flor de lótus",
+      "Prato de jade em forma de crisântemo"
+    ]
+  },
+  "90": {
+    "price": { "rolls": 1, "die": 4, "mult": 1000 },
+    "examples": [
+      "Katana ornamental em forma de dragão celestial",
+      "Gongo de bronze folheado a ouro",
+      "Espelho de prata com cabo esculpido em jade"
+    ]
+  },
+  "95": {
+    "price": { "rolls": 1, "die": 6, "mult": 1000 },
+    "examples": [
+      "Estatueta de falcão em bronze em um galho natural envernizado",
+      "Tiara ornada com águas-marinhas"
+    ]
+  },
+  "99": {
+    "price": { "rolls": 2, "die": 4, "mult": 1000 },
+    "examples": [
+      "Estatueta de jade de um dragão celestial",
+      "Daisho ornamental esmaltado em negro decorado com pérolas negras"
+    ]
+  },
+  "100": {
+    "price": { "rolls": 2, "die": 6, "mult": 1000 },
+    "examples": [
+      "Jogo de chá em cerâmica esmaltada decorado com esmeraldas",
+      "Anel de ouro com jade celestial"
+    ]
+  }
 }

@@ -1,15 +1,15 @@
 {
-	"10": "Armadura ashigaru",
-	"15": "Armadura de couro",
-	"20": "Armadura de ossos",
-	"23": "Carapaça kappa",
-	"33": "Char-aina",
-	"36": "Escudo leve",
-	"39": "Escudo pesado",
-	"49": "Haramaki",
-	"59": "Lamelar",
-	"70": "O-yoroi",
-	"80": "Suchiiru",
-	"90": "return equipmentGenerator(clothings);",
-	"100": "Yoroi"
+  "10": "Armadura ashigaru",
+  "15": "Armadura de couro",
+  "20": "Armadura de ossos",
+  "23": "Carapaça kappa",
+  "33": "Char-aina",
+  "36": "Escudo leve",
+  "39": "Escudo pesado",
+  "49": "Haramaki",
+  "59": "Lamelar",
+  "70": "O-yoroi",
+  "80": "Suchiiru",
+  "90": { "type": "equipment", "dict": "clothings" },
+  "100": "Yoroi"
 }

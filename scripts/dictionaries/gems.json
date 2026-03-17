@@ -1,93 +1,93 @@
 {
-	"25": {
-		"price": "return rollDie(4, 4)",
-		"examples": [
-			"Ágata Listrada",
-			"Ágata Ciclope",
-			"Ágata Musgo",
-			"Quartzo azul",
-			"Hematita",
-			"Lápis-lazúli",
-			"Malaquita",
-			"Obsidiana",
-			"Rodocrosita",
-			"Olho de tigre",
-			"Pérola (irregular)",
-			"Agua-marinha"
-		]
-	},
-	"50": {
-		"price": "return rollDie(2, 4) * 10",
-		"examples": [
-			"Heliotropo (Pedra Sangue)",
-			"Cornalina",
-			"Citrino",
-			"Iolita",
-			"Jaspe",
-			"Adulária",
-			"Ônix",
-			"Perídoto",
-			"Cristal de Rocha (Quartzo Hialino)",
-			"Quartzo Rosa",
-			"Zircão"
-		]
-	},
-	"70": {
-		"price": "return rollDie(4, 4) * 10",
-		"examples": [
-			"Âmbar",
-			"Ametista",
-			"Coral",
-			"Piropo",
-			"Grossularite",
-			"Lignito",
-			"Pérola branca",
-			"Pérola dourada",
-			"Pérola rosa",
-			"Pérola prateada",
-			"Espinela vermelha",
-			"Turmalina"
-		]
-	},
-	"90": {
-		"price": "return rollDie(2, 4) * 100",
-		"examples": [
-			"Alexandrita",
-			"Água-marinha",
-			"Espinela violeta",
-			"Pérola negra",
-			"Espinela azul escuro",
-			"Topázio amarelo"
-		]
-	},
-	"99": {
-		"price": "return rollDie(4, 4) * 100",
-		"examples": [
-			"Jade",
-			"Esmeralda",
-			"Opala branca",
-			"Opala negra",
-			"Opala vermelha",
-			"Safira azul",
-			"Coríndon amarelo",
-			"Coríndon púrpura",
-			"Safira-estrela azul",
-			"Safira-estrela negra",
-			"Rubi estrela"
-		]
-	},
-	"100": {
-		"price": "return rollDie(2, 4) * 1000",
-		"examples": [
-			"Jade celestial",
-			"Esmeralda verde-claro",
-			"Diamante branco-azulado",
-			"Diamante canário",
-			"Diamante rosa",
-			"Diamante marrom",
-			"Diamante azul",
-			"Zircão vermelho",
-			"Zircão transparente"
-		]
-	}
+  "25": {
+    "price": { "rolls": 4, "die": 4, "mult": 1 },
+    "examples": [
+      "Ágata Listrada",
+      "Ágata Ciclope",
+      "Ágata Musgo",
+      "Quartzo azul",
+      "Hematita",
+      "Lápis-lazúli",
+      "Malaquita",
+      "Obsidiana",
+      "Rodocrosita",
+      "Olho de tigre",
+      "Pérola (irregular)",
+      "Agua-marinha"
+    ]
+  },
+  "50": {
+    "price": { "rolls": 2, "die": 4, "mult": 10 },
+    "examples": [
+      "Heliotropo (Pedra Sangue)",
+      "Cornalina",
+      "Citrino",
+      "Iolita",
+      "Jaspe",
+      "Adulária",
+      "Ônix",
+      "Perídoto",
+      "Cristal de Rocha (Quartzo Hialino)",
+      "Quartzo Rosa",
+      "Zircão"
+    ]
+  },
+  "70": {
+    "price": { "rolls": 4, "die": 4, "mult": 10 },
+    "examples": [
+      "Âmbar",
+      "Ametista",
+      "Coral",
+      "Piropo",
+      "Grossularite",
+      "Lignito",
+      "Pérola branca",
+      "Pérola dourada",
+      "Pérola rosa",
+      "Pérola prateada",
+      "Espinela vermelha",
+      "Turmalina"
+    ]
+  },
+  "90": {
+    "price": { "rolls": 2, "die": 4, "mult": 100 },
+    "examples": [
+      "Alexandrita",
+      "Água-marinha",
+      "Espinela violeta",
+      "Pérola negra",
+      "Espinela azul escuro",
+      "Topázio amarelo"
+    ]
+  },
+  "99": {
+    "price": { "rolls": 4, "die": 4, "mult": 100 },
+    "examples": [
+      "Jade",
+      "Esmeralda",
+      "Opala branca",
+      "Opala negra",
+      "Opala vermelha",
+      "Safira azul",
+      "Coríndon amarelo",
+      "Coríndon púrpura",
+      "Safira-estrela azul",
+      "Safira-estrela negra",
+      "Rubi estrela"
+    ]
+  },
+  "100": {
+    "price": { "rolls": 2, "die": 4, "mult": 1000 },
+    "examples": [
+      "Jade celestial",
+      "Esmeralda verde-claro",
+      "Diamante branco-azulado",
+      "Diamante canário",
+      "Diamante rosa",
+      "Diamante marrom",
+      "Diamante azul",
+      "Zircão vermelho",
+      "Zircão transparente"
+    ]
+  }
 }
