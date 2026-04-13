@@ -1,0 +1,10 @@
+{
+  "menor": [
+    [90,  { "type": "jutsu", "tier": "basic",  "price": 50 }],
+    [100, { "type": "jutsu", "tier": "medium", "price": 300 }]
+  ],
+  "medio": [
+    [40,  { "type": "jutsu", "tier": "basic",  "price": 50 }],
+    [100, { "type": "jutsu", "tier": "medium", "price": 300 }]
+  ]
+}

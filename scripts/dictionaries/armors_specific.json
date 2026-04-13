@@ -1,0 +1,38 @@
+{
+  "menor": [
+    [20,  { "name": "Broto de bambu suchiiru",  "price": 2500 }],
+    [35,  { "name": "Ossos inquietos",          "price": 5320 }],
+    [50,  { "name": "Escudo do dragão",         "price": 7515 }],
+    [65,  { "name": "Couro huna'bito",          "price": 9310 }],
+    [80,  { "name": "Thai'rrokhan",             "price": 9330 }],
+    [100, { "name": "Humilde uniforme",         "price": 12801 }]
+  ],
+  "medio": [
+    [15,  { "name": "Broto de bambu suchiiru",          "price": 2500 }],
+    [22,  { "name": "Ossos inquietos",                  "price": 5320 }],
+    [32,  { "name": "Escudo do dragão",                 "price": 7515 }],
+    [42,  { "name": "Couro huna'bito",                  "price": 9310 }],
+    [49,  { "name": "Thai'rrokhan",                     "price": 9330 }],
+    [64,  { "name": "Humilde uniforme",                 "price": 12801 }],
+    [71,  { "name": "Guarda inabalável",                "price": 20815 }],
+    [78,  { "name": "Escama do dragão azul do leste",   "price": 21900 }],
+    [85,  { "name": "Tufão sublime",                    "price": 25350 }],
+    [92,  { "name": "Sobrevivente maldita",             "price": 25550 }],
+    [100, { "name": "Blindagem elemental",              "price": 30000 }]
+  ],
+  "maior": [
+    [5,   { "name": "Couro huna'bito",                  "price": 9310 }],
+    [10,  { "name": "Thai'rrokhan",                     "price": 9330 }],
+    [20,  { "name": "Humilde uniforme",                 "price": 12801 }],
+    [30,  { "name": "Guarda inabalável",                "price": 20815 }],
+    [40,  { "name": "Escama do dragão azul do leste",   "price": 21900 }],
+    [50,  { "name": "Tufão sublime",                    "price": 25350 }],
+    [60,  { "name": "Sobrevivente maldita",             "price": 25550 }],
+    [75,  { "name": "Blindagem elemental",              "price": 30000 }],
+    [82,  { "name": "Quimono celestial",                "price": 37100 }],
+    [86,  { "name": "Rancor nos quatro espelhos",       "price": 50375 }],
+    [90,  { "name": "Fortaleza do coração das trevas",  "price": 50550 }],
+    [95,  { "name": "Manto do feiticeiro do caos",      "price": 56560 }],
+    [100, { "name": "Traje das sombras eternas",        "price": 64300 }]
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "menor": [
+    [70,  { "type": "magic_bonus", "bonus": 1,  "price_add": 2000 }],
+    [85,  { "type": "magic_bonus", "bonus": 2,  "price_add": 8000 }],
+    [95,  { "type": "special_power", "dict": "weapon_powers_melee" }],
+    [100, { "type": "specific", "dict": "weapons_specific" }]
+  ],
+  "medio": [
+    [10,  { "type": "magic_bonus", "bonus": 1,  "price_add": 2000 }],
+    [40,  { "type": "magic_bonus", "bonus": 2,  "price_add": 8000 }],
+    [60,  { "type": "magic_bonus", "bonus": 3,  "price_add": 18000 }],
+    [65,  { "type": "magic_bonus", "bonus": 4,  "price_add": 32000 }],
+    [90,  { "type": "special_power", "dict": "weapon_powers_melee" }],
+    [100, { "type": "specific", "dict": "weapons_specific" }]
+  ],
+  "maior": [
+    [20,  { "type": "magic_bonus", "bonus": 3,  "price_add": 18000 }],
+    [35,  { "type": "magic_bonus", "bonus": 4,  "price_add": 32000 }],
+    [45,  { "type": "magic_bonus", "bonus": 5,  "price_add": 50000 }],
+    [85,  { "type": "special_power", "dict": "weapon_powers_melee" }],
+    [100, { "type": "specific", "dict": "weapons_specific" }]
+  ]
+}

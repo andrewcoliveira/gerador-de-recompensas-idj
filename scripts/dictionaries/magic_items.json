@@ -1,0 +1,22 @@
+{
+  "menor": [
+    [5,   { "type": "magic_item_type", "category": "armas" }],
+    [10,  { "type": "magic_item_type", "category": "armaduras" }],
+    [80,  { "type": "magic_item_type", "category": "ofuda" }],
+    [90,  { "type": "magic_item_type", "category": "amuletos" }],
+    [100, { "type": "magic_item_type", "category": "acessorios" }]
+  ],
+  "medio": [
+    [10,  { "type": "magic_item_type", "category": "armas" }],
+    [20,  { "type": "magic_item_type", "category": "armaduras" }],
+    [60,  { "type": "magic_item_type", "category": "ofuda" }],
+    [80,  { "type": "magic_item_type", "category": "amuletos" }],
+    [100, { "type": "magic_item_type", "category": "acessorios" }]
+  ],
+  "maior": [
+    [35,  { "type": "magic_item_type", "category": "armas" }],
+    [55,  { "type": "magic_item_type", "category": "armaduras" }],
+    [70,  { "type": "magic_item_type", "category": "amuletos" }],
+    [100, { "type": "magic_item_type", "category": "acessorios" }]
+  ]
+}

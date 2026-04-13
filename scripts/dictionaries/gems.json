@@ -1,5 +1,5 @@
-{
-  "25": {
+[
+  [25, {
     "price": { "rolls": 4, "die": 4, "mult": 1 },
     "examples": [
       "Ágata Listrada",
@@ -15,8 +15,8 @@
       "Pérola (irregular)",
       "Agua-marinha"
     ]
-  },
-  "50": {
+  }],
+  [50, {
     "price": { "rolls": 2, "die": 4, "mult": 10 },
     "examples": [
       "Heliotropo (Pedra Sangue)",
@@ -31,8 +31,8 @@
       "Quartzo Rosa",
       "Zircão"
     ]
-  },
-  "70": {
+  }],
+  [70, {
     "price": { "rolls": 4, "die": 4, "mult": 10 },
     "examples": [
       "Âmbar",
@@ -48,8 +48,8 @@
       "Espinela vermelha",
       "Turmalina"
     ]
-  },
-  "90": {
+  }],
+  [90, {
     "price": { "rolls": 2, "die": 4, "mult": 100 },
     "examples": [
       "Alexandrita",
@@ -59,8 +59,8 @@
       "Espinela azul escuro",
       "Topázio amarelo"
     ]
-  },
-  "99": {
+  }],
+  [99, {
     "price": { "rolls": 4, "die": 4, "mult": 100 },
     "examples": [
       "Jade",
@@ -75,8 +75,8 @@
       "Safira-estrela negra",
       "Rubi estrela"
     ]
-  },
-  "100": {
+  }],
+  [100, {
     "price": { "rolls": 2, "die": 4, "mult": 1000 },
     "examples": [
       "Jade celestial",
@@ -89,5 +89,5 @@
       "Zircão vermelho",
       "Zircão transparente"
     ]
-  }
-}
+  }]
+]

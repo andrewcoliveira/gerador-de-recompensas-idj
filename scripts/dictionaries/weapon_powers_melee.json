@@ -1,0 +1,53 @@
+{
+  "menor": [
+    [10,  { "name": "Cáustica",    "bonus_equiv": 1 }],
+    [25,  { "name": "Congelante",  "bonus_equiv": 1 }],
+    [35,  { "name": "Defensora",   "bonus_equiv": 1 }],
+    [50,  { "name": "Elétrica",    "bonus_equiv": 1 }],
+    [60,  { "name": "Fantasma",    "bonus_equiv": 1 }],
+    [75,  { "name": "Flamejante",  "bonus_equiv": 1 }],
+    [80,  { "name": "Retornável",  "bonus_equiv": 1 }],
+    [85,  { "name": "Piedosa",     "bonus_equiv": 1 }],
+    [100, { "name": "Trovejante",  "bonus_equiv": 1 }]
+  ],
+  "medio": [
+    [10,  { "name": "Cáustica",    "bonus_equiv": 1 }],
+    [20,  { "name": "Congelante",  "bonus_equiv": 1 }],
+    [25,  { "name": "Defensora",   "bonus_equiv": 1 }],
+    [35,  { "name": "Elétrica",    "bonus_equiv": 1 }],
+    [38,  { "name": "Fantasma",    "bonus_equiv": 1 }],
+    [48,  { "name": "Flamejante",  "bonus_equiv": 1 }],
+    [51,  { "name": "Retornável",  "bonus_equiv": 1 }],
+    [55,  { "name": "Piedosa",     "bonus_equiv": 1 }],
+    [65,  { "name": "Trovejante",  "bonus_equiv": 1 }],
+    [70,  { "name": "Ameaçadora",  "bonus_equiv": 2 }],
+    [80,  { "name": "Digníssima",  "bonus_equiv": 2 }],
+    [85,  { "name": "Disruptiva",  "bonus_equiv": 2 }],
+    [90,  { "name": "Radiante",    "bonus_equiv": 2 }],
+    [95,  { "name": "Sórdida",     "bonus_equiv": 2 }],
+    [100, { "name": "Soturna",     "bonus_equiv": 2 }]
+  ],
+  "maior": [
+    [4,   { "name": "Cáustica",    "bonus_equiv": 1 }],
+    [9,   { "name": "Congelante",  "bonus_equiv": 1 }],
+    [12,  { "name": "Defensora",   "bonus_equiv": 1 }],
+    [17,  { "name": "Elétrica",    "bonus_equiv": 1 }],
+    [20,  { "name": "Fantasma",    "bonus_equiv": 1 }],
+    [25,  { "name": "Flamejante",  "bonus_equiv": 1 }],
+    [28,  { "name": "Retornável",  "bonus_equiv": 1 }],
+    [30,  { "name": "Piedosa",     "bonus_equiv": 1 }],
+    [34,  { "name": "Trovejante",  "bonus_equiv": 1 }],
+    [44,  { "name": "Ameaçadora",  "bonus_equiv": 2 }],
+    [54,  { "name": "Digníssima",  "bonus_equiv": 2 }],
+    [61,  { "name": "Disruptiva",  "bonus_equiv": 2 }],
+    [68,  { "name": "Radiante",    "bonus_equiv": 2 }],
+    [75,  { "name": "Sórdida",     "bonus_equiv": 2 }],
+    [82,  { "name": "Soturna",     "bonus_equiv": 2 }],
+    [85,  { "name": "Energética",  "bonus_equiv": 3 }],
+    [88,  { "name": "Sanguinária", "bonus_equiv": 3 }],
+    [91,  { "name": "Destrutiva",  "bonus_equiv": 4 }],
+    [94,  { "name": "Exorcista",   "bonus_equiv": 4 }],
+    [97,  { "name": "Veloz",       "bonus_equiv": 4 }],
+    [100, { "name": "Mortal",      "bonus_equiv": 5 }]
+  ]
+}

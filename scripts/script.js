@@ -1,4 +1,3 @@
-var elementsToHide = document.getElementsByClassName('hidden-initially');
-for (var i = 0; i < elementsToHide.length; i++) {
-	elementsToHide[i].style.display = 'none';
+for (const el of document.getElementsByClassName("hidden-initially")) {
+  el.style.display = "none";
 }

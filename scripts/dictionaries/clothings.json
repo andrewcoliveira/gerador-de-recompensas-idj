@@ -1,6 +1,6 @@
-{
-	"40": "Booken-fuku",
-	"60": "Dai'zenshi-fuku",
-	"90": "Quimono",
-	"100": "Shinobi shozoku"
-}
+[
+  [40, "Booken-fuku"],
+  [60, "Dai'zenshi-fuku"],
+  [90, "Quimono"],
+  [100, "Shinobi shozoku"]
+]

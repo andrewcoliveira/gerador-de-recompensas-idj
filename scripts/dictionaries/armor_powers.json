@@ -1,0 +1,51 @@
+{
+  "menor": [
+    [15,  { "name": "Acrobática",    "bonus_equiv": 1 }],
+    [30,  { "name": "Assustadora",   "bonus_equiv": 1 }],
+    [45,  { "name": "Atlética",      "bonus_equiv": 1 }],
+    [55,  { "name": "Fortificada",   "bonus_equiv": 1 }],
+    [60,  { "name": "Guardiã",       "bonus_equiv": 1 }],
+    [70,  { "name": "Ilusória",      "bonus_equiv": 1 }],
+    [75,  { "name": "Reluzente",     "bonus_equiv": 1 }],
+    [85,  { "name": "Resistente",    "bonus_equiv": 1 }],
+    [100, { "name": "Sombria",       "bonus_equiv": 1 }]
+  ],
+  "medio": [
+    [5,   { "name": "Acrobática",    "bonus_equiv": 1 }],
+    [10,  { "name": "Assustadora",   "bonus_equiv": 1 }],
+    [15,  { "name": "Atlética",      "bonus_equiv": 1 }],
+    [30,  { "name": "Fortificada",   "bonus_equiv": 1 }],
+    [35,  { "name": "Guardiã",       "bonus_equiv": 1 }],
+    [40,  { "name": "Ilusória",      "bonus_equiv": 1 }],
+    [45,  { "name": "Reluzente",     "bonus_equiv": 1 }],
+    [60,  { "name": "Resistente",    "bonus_equiv": 1 }],
+    [65,  { "name": "Sombria",       "bonus_equiv": 1 }],
+    [70,  { "name": "Corrosiva",     "bonus_equiv": 2 }],
+    [75,  { "name": "Espiritual",    "bonus_equiv": 2 }],
+    [80,  { "name": "Gélida",        "bonus_equiv": 2 }],
+    [85,  { "name": "Hipnótica",     "bonus_equiv": 2 }],
+    [90,  { "name": "Incandescente", "bonus_equiv": 2 }],
+    [95,  { "name": "Relampejante",  "bonus_equiv": 2 }],
+    [100, { "name": "Tempestuosa",   "bonus_equiv": 2 }]
+  ],
+  "maior": [
+    [10,  { "name": "Fortificada",   "bonus_equiv": 1 }],
+    [20,  { "name": "Resistente",    "bonus_equiv": 1 }],
+    [27,  { "name": "Corrosiva",     "bonus_equiv": 2 }],
+    [32,  { "name": "Espiritual",    "bonus_equiv": 2 }],
+    [39,  { "name": "Gélida",        "bonus_equiv": 2 }],
+    [44,  { "name": "Hipnótica",     "bonus_equiv": 2 }],
+    [51,  { "name": "Incandescente", "bonus_equiv": 2 }],
+    [58,  { "name": "Relampejante",  "bonus_equiv": 2 }],
+    [65,  { "name": "Tempestuosa",   "bonus_equiv": 2 }],
+    [70,  { "name": "Abençoada",     "bonus_equiv": 3 }],
+    [75,  { "name": "Corrupta",      "bonus_equiv": 3 }],
+    [80,  { "name": "Desonrada",     "bonus_equiv": 3 }],
+    [85,  { "name": "Honrada",       "bonus_equiv": 3 }],
+    [90,  { "name": "Energizada",    "bonus_equiv": 4 }],
+    [93,  { "name": "Invulnerável",  "bonus_equiv": 4 }],
+    [96,  { "name": "Opaca",         "bonus_equiv": 4 }],
+    [98,  { "name": "Divergente",    "bonus_equiv": 5 }],
+    [100, { "name": "Refletora",     "bonus_equiv": 5 }]
+  ]
+}

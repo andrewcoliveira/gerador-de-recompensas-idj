@@ -1,0 +1,23 @@
+{
+  "menor": [
+    [70,  { "type": "magic_bonus", "bonus": 1, "price_add": 1000 }],
+    [85,  { "type": "magic_bonus", "bonus": 2, "price_add": 4000 }],
+    [95,  { "type": "special_power", "dict": "armor_powers" }],
+    [100, { "type": "specific", "dict": "armors_specific" }]
+  ],
+  "medio": [
+    [10,  { "type": "magic_bonus", "bonus": 1, "price_add": 1000 }],
+    [40,  { "type": "magic_bonus", "bonus": 2, "price_add": 4000 }],
+    [60,  { "type": "magic_bonus", "bonus": 3, "price_add": 9000 }],
+    [65,  { "type": "magic_bonus", "bonus": 4, "price_add": 16000 }],
+    [90,  { "type": "special_power", "dict": "armor_powers" }],
+    [100, { "type": "specific", "dict": "armors_specific" }]
+  ],
+  "maior": [
+    [20,  { "type": "magic_bonus", "bonus": 3, "price_add": 9000 }],
+    [35,  { "type": "magic_bonus", "bonus": 4, "price_add": 16000 }],
+    [45,  { "type": "magic_bonus", "bonus": 5, "price_add": 25000 }],
+    [85,  { "type": "special_power", "dict": "armor_powers" }],
+    [100, { "type": "specific", "dict": "armors_specific" }]
+  ]
+}

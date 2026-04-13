@@ -1,0 +1,41 @@
+{
+  "menor": [
+    [30,  { "name": "Estrela elemental",                      "price": 366 }],
+    [50,  { "name": "Unha do gato sortudo",                   "price": 2310 }],
+    [70,  { "name": "Chakram gritante",                       "price": 2315 }],
+    [100, { "name": "Silêncio das sentinelas no roseiral",    "price": 2375 }]
+  ],
+  "medio": [
+    [12,  { "name": "Estrela elemental",                      "price": 366 }],
+    [19,  { "name": "Unha do gato sortudo",                   "price": 2310 }],
+    [29,  { "name": "Chakram gritante",                       "price": 2315 }],
+    [39,  { "name": "Silêncio das sentinelas no roseiral",    "price": 2375 }],
+    [44,  { "name": "Kra'tann sh'kann'shmin",                 "price": 4335 }],
+    [51,  { "name": "Dente gélido do cão lunar",              "price": 7510 }],
+    [56,  { "name": "Garganta da naja",                       "price": 8305 }],
+    [66,  { "name": "Ceifadora de demônios",                  "price": 8315 }],
+    [71,  { "name": "Surpresa mortal",                        "price": 11020 }],
+    [77,  { "name": "Maestria marcial do magistrado",         "price": 12104 }],
+    [85,  { "name": "Feixe da mente límpida",                 "price": 16560 }],
+    [90,  { "name": "Rastilho flamejante de Hinotori",        "price": 19310 }],
+    [95,  { "name": "Cortadora profunda",                     "price": 19400 }],
+    [100, { "name": "Lâmina da bruxa aberrante",              "price": 19400 }]
+  ],
+  "maior": [
+    [10,  { "name": "Rastilho flamejante de Hinotori",        "price": 19310 }],
+    [20,  { "name": "Cortadora profunda",                     "price": 19400 }],
+    [30,  { "name": "Lâmina da bruxa aberrante",              "price": 19400 }],
+    [37,  { "name": "Crescente lunar",                        "price": 20400 }],
+    [42,  { "name": "Vingança traiçoeira",                    "price": 22310 }],
+    [49,  { "name": "Cauda do tigre branco",                  "price": 22315 }],
+    [56,  { "name": "Corrente do rio das almas",              "price": 25715 }],
+    [63,  { "name": "Salvação no relâmpago sólido",           "price": 28315 }],
+    [70,  { "name": "Bordão do artista marcial",              "price": 32300 }],
+    [75,  { "name": "Kakko'dai krrat'kharn",                  "price": 32320 }],
+    [82,  { "name": "Daisho imperial",                        "price": 38610 }],
+    [87,  { "name": "Chifre das cerejeiras celestiais",       "price": 41552 }],
+    [92,  { "name": "Vento silvante no bambuzal",             "price": 47100 }],
+    [96,  { "name": "Pilar derrubado",                        "price": 50320 }],
+    [100, { "name": "Digníssima determinação",                "price": 120800 }]
+  ]
+}
