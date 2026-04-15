@@ -415,7 +415,7 @@ body {
 .selector-title {
 	font-family: shanghairegular;
 	font-size: 1.1rem;
-	color: #2c3e2d;
+	color: #1d7035;
 	text-align: center;
 	margin-bottom: 1rem;
 	letter-spacing: 0.03em;
@@ -699,7 +699,7 @@ body {
 }
 
 .roll-badge-formula {
-	background: linear-gradient(135deg, #5a7d5e, #3d5c42);
+	background: linear-gradient(135deg, #208e40, #1a6e32);
 	color: #fff;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
