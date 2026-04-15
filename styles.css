@@ -704,11 +704,6 @@ body {
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
-.dice-icon {
-	font-size: 0.9em;
-	line-height: 1;
-}
-
 .roll-label {
 	color: #7a8c7a;
 	font-style: italic;
