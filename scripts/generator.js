@@ -1,6 +1,7 @@
 // --- UTILITÁRIOS BASE ---
 
 const dictionaries = {};
+let rollLog = [];
 
 function rollDie(rolls, die) {
   let sum = 0;
@@ -10,22 +11,66 @@ function rollDie(rolls, die) {
   return sum;
 }
 
-function resolvePriceFormula(formula) {
-  if (typeof formula === "number") return formula;
-  const { rolls, die, mult = 1 } = formula;
-  return rollDie(rolls, die) * mult;
+function formatPrice(price) {
+  return price.toLocaleString("pt-BR") + " ¥o";
 }
 
-function rollFromTable(table) {
+function describeTableResult(value) {
+  if (!value || value === "-") return "Nenhum item";
+  if (typeof value === "string") return value;
+  if (value.examples) {
+    const p = value.price;
+    const expr = typeof p === "number"
+      ? `${p} ¥o`
+      : `${p.rolls}d${p.die}${p.mult > 1 ? ` × ${p.mult}` : ""} ¥o`;
+    return `Faixa: ${expr}`;
+  }
+  if (value.name !== undefined && value.price !== undefined) return `${value.name} (${formatPrice(value.price)})`;
+  if (value.name !== undefined && value.bonus_equiv !== undefined) return `${value.name} (equiv. +${value.bonus_equiv})`;
+  switch (value.type) {
+    case "equipment": {
+      const labels = { weapons: "Arma", armors: "Armadura", items: "Item", clothings: "Vestimenta" };
+      const base = labels[value.dict] || value.dict;
+      return value.special ? `${base} de material especial` : base;
+    }
+    case "magic_item": return `Item mágico ${value.tier}`;
+    case "magic_item_type": {
+      const cats = { armas: "Armas", armaduras: "Armaduras", ofuda: "Ofuda", amuletos: "Amuletos", acessorios: "Acessórios" };
+      return cats[value.category] || value.category;
+    }
+    case "riches": {
+      const [rolls, die, mod, mult, symbol] = value.args;
+      const modStr = mod ? ` + ${mod}` : "";
+      return `${rolls}d${die}${modStr} × ${mult} ${symbol}`;
+    }
+    case "rare": return value.dict === "gems" ? "Gema(s)" : "Obra(s) de arte";
+    case "magic_bonus": return `Bônus +${value.bonus}`;
+    case "special_power": return "Poder especial";
+    case "specific": return "Item específico";
+    case "jutsu": return `Jutsu ${value.tier === "basic" ? "básico" : "mediano"}`;
+    default: return value.type;
+  }
+}
+
+function rollFromTable(table, label) {
   const roll = rollDie(1, 100);
   for (const [threshold, value] of table) {
-    if (roll <= threshold) return value;
+    if (roll <= threshold) {
+      rollLog.push({ type: "d100", roll, label, result: describeTableResult(value) });
+      return value;
+    }
   }
   return null;
 }
 
-function formatPrice(price) {
-  return price.toLocaleString("pt-BR") + " ¥o";
+function resolvePriceFormula(formula, context = "") {
+  if (typeof formula === "number") return formula;
+  const { rolls, die, mult = 1 } = formula;
+  const raw = rollDie(rolls, die);
+  const result = raw * mult;
+  const expression = `${rolls}d${die}${mult > 1 ? ` × ${mult}` : ""}`;
+  rollLog.push({ type: "formula", expression, result, label: context ? `Valor: ${context}` : "Valor" });
+  return result;
 }
 
 // --- GERADORES LÓGICOS ---
@@ -34,7 +79,8 @@ function equipmentGenerator(dictName, isSpecialMaterial = false) {
   const dict = dictionaries[dictName];
   if (!dict) return `Erro: Dicionário ${dictName} não encontrado`;
 
-  const result = rollFromTable(dict);
+  const dictLabels = { weapons: "Arma base", armors: "Armadura base", items: "Item", clothings: "Vestimenta" };
+  const result = rollFromTable(dict, dictLabels[dictName] || dictName);
 
   if (result && typeof result === "object" && result.type) {
     return resolveAction(result);
@@ -43,7 +89,7 @@ function equipmentGenerator(dictName, isSpecialMaterial = false) {
   const equipment = result || "Item desconhecido";
 
   if (isSpecialMaterial && dictionaries.materials) {
-    const material = rollFromTable(dictionaries.materials);
+    const material = rollFromTable(dictionaries.materials, "Material especial");
     if (material) return `${equipment} de ${material}`;
   }
 
@@ -51,22 +97,32 @@ function equipmentGenerator(dictName, isSpecialMaterial = false) {
 }
 
 function richesGenerator(rolls, die, modifier, multiplicator, symbol) {
-  const result = (rollDie(rolls, die) + modifier) * multiplicator;
+  const raw = rollDie(rolls, die);
+  const result = (raw + modifier) * multiplicator;
+  const modStr = modifier ? ` + ${modifier}` : "";
+  const expression = `${rolls}d${die}${modStr}${multiplicator > 1 ? ` × ${multiplicator}` : ""}`;
+  rollLog.push({ type: "formula", expression, result, label: `Valor em ${symbol}` });
   return `${result} ${symbol}`;
 }
 
 function rareItemGenerator(rolls, die, modifier, dictName) {
   const dict = dictionaries[dictName];
-  const quantity = rollDie(rolls, die) + modifier;
+  const rawQty = rollDie(rolls, die);
+  const quantity = rawQty + modifier;
+  const modStr = modifier ? ` + ${modifier}` : "";
+  const typeLabel = dictName === "gems" ? "gemas" : "obras de arte";
+  const singular = dictName === "gems" ? "gema" : "obra de arte";
+  rollLog.push({ type: "formula", expression: `${rolls}d${die}${modStr}`, result: quantity, label: `Quantidade de ${typeLabel}` });
+
   const inventory = new Map();
   let totalValue = 0;
 
   for (let i = 0; i < quantity; i++) {
-    const itemData = rollFromTable(dict);
+    const itemData = rollFromTable(dict, `Faixa de valor (${singular} ${i + 1})`);
     if (!itemData) continue;
 
     const example = itemData.examples[Math.floor(Math.random() * itemData.examples.length)];
-    const price = resolvePriceFormula(itemData.price);
+    const price = resolvePriceFormula(itemData.price, example);
 
     if (inventory.has(example)) {
       const entry = inventory.get(example);
@@ -92,7 +148,7 @@ function rareItemGenerator(rolls, die, modifier, dictName) {
 
 function getWeaponBaseBonus(tier) {
   for (let i = 0; i < 10; i++) {
-    const result = rollFromTable(dictionaries.magic_weapons[tier]);
+    const result = rollFromTable(dictionaries.magic_weapons[tier], "Bônus base (re-rolagem)");
     if (result?.type === "magic_bonus") return result;
   }
   return { bonus: 1, price_add: 2000 };
@@ -100,14 +156,14 @@ function getWeaponBaseBonus(tier) {
 
 function getArmorBaseBonus(tier) {
   for (let i = 0; i < 10; i++) {
-    const result = rollFromTable(dictionaries.magic_armors[tier]);
+    const result = rollFromTable(dictionaries.magic_armors[tier], "Bônus base (re-rolagem)");
     if (result?.type === "magic_bonus") return result;
   }
   return { bonus: 1, price_add: 1000 };
 }
 
 function magicWeaponGenerator(tier) {
-  const result = rollFromTable(dictionaries.magic_weapons[tier]);
+  const result = rollFromTable(dictionaries.magic_weapons[tier], `Arma mágica (${tier})`);
   if (!result) return "Arma mágica desconhecida";
 
   if (result.type === "magic_bonus") {
@@ -118,12 +174,12 @@ function magicWeaponGenerator(tier) {
   if (result.type === "special_power") {
     const base = getWeaponBaseBonus(tier);
     const weapon = equipmentGenerator("weapons");
-    const power = rollFromTable(dictionaries[result.dict][tier]);
+    const power = rollFromTable(dictionaries[result.dict][tier], "Poder especial");
     return `${weapon} +${base.bonus} ${power.name} (${formatPrice(base.price_add)}, poder equiv. +${power.bonus_equiv})`;
   }
 
   if (result.type === "specific") {
-    const item = rollFromTable(dictionaries[result.dict][tier]);
+    const item = rollFromTable(dictionaries[result.dict][tier], "Arma específica");
     return `${item.name} (${formatPrice(item.price)})`;
   }
 
@@ -131,7 +187,7 @@ function magicWeaponGenerator(tier) {
 }
 
 function magicArmorGenerator(tier) {
-  const result = rollFromTable(dictionaries.magic_armors[tier]);
+  const result = rollFromTable(dictionaries.magic_armors[tier], `Armadura mágica (${tier})`);
   if (!result) return "Armadura mágica desconhecida";
 
   if (result.type === "magic_bonus") {
@@ -142,12 +198,12 @@ function magicArmorGenerator(tier) {
   if (result.type === "special_power") {
     const base = getArmorBaseBonus(tier);
     const armor = equipmentGenerator("armors");
-    const power = rollFromTable(dictionaries[result.dict][tier]);
+    const power = rollFromTable(dictionaries[result.dict][tier], "Poder especial");
     return `${armor} +${base.bonus} ${power.name} (${formatPrice(base.price_add)}, poder equiv. +${power.bonus_equiv})`;
   }
 
   if (result.type === "specific") {
-    const item = rollFromTable(dictionaries[result.dict][tier]);
+    const item = rollFromTable(dictionaries[result.dict][tier], "Armadura específica");
     return `${item.name} (${formatPrice(item.price)})`;
   }
 
@@ -155,28 +211,27 @@ function magicArmorGenerator(tier) {
 }
 
 function ofudaGenerator(tier) {
-  const result = rollFromTable(dictionaries.ofuda[tier]);
+  const result = rollFromTable(dictionaries.ofuda[tier], `Grau de jutsu (${tier})`);
   if (!result) return "Ofuda desconhecida";
-
   const jutsuDict = result.tier === "basic" ? dictionaries.jutsus_basic : dictionaries.jutsus_medium;
-  const jutsu = rollFromTable(jutsuDict);
-  return `Ofuda ${jutsu} (${formatPrice(result.price)})`;
+  const jutsu = rollFromTable(jutsuDict, "Jutsu");
+  return `Ofuda: ${jutsu} (${formatPrice(result.price)})`;
 }
 
 function amuletGenerator(tier) {
-  const item = rollFromTable(dictionaries.amulets[tier]);
+  const item = rollFromTable(dictionaries.amulets[tier], `Amuleto (${tier})`);
   if (!item) return "Amuleto desconhecido";
   return `Amuleto de ${item.name} (${formatPrice(item.price)})`;
 }
 
 function accessoryGenerator(tier) {
-  const item = rollFromTable(dictionaries.accessories[tier]);
+  const item = rollFromTable(dictionaries.accessories[tier], `Acessório (${tier})`);
   if (!item) return "Acessório desconhecido";
   return `${item.name} (${formatPrice(item.price)})`;
 }
 
 function magicItemGenerator(tier) {
-  const categoryAction = rollFromTable(dictionaries.magic_items[tier]);
+  const categoryAction = rollFromTable(dictionaries.magic_items[tier], `Categoria (item mágico ${tier})`);
   if (!categoryAction) return "Item mágico não encontrado";
 
   switch (categoryAction.category) {
@@ -239,16 +294,80 @@ Promise.all([
 function getValueFromDict(dictName, nd) {
   const dict = dictionaries[dictName];
   if (!dict?.[nd]) return "ND inválido";
-  return resolveAction(rollFromTable(dict[nd]) ?? "Nenhum resultado");
+  const labels = { richesDict: "Tipo de riqueza", equipmentDict: "Tipo de equipamento" };
+  return resolveAction(rollFromTable(dict[nd], labels[dictName] || dictName) ?? "Nenhum resultado");
+}
+
+// --- RENDERIZAÇÃO DO LOG ---
+
+function renderRollLog(log) {
+  return log.map(entry => {
+    if (entry.type === "d100") {
+      return `<div class="roll-step">
+        <span class="roll-badge roll-badge-d100"><span class="dice-icon">⚄</span>${entry.roll}</span>
+        <span class="roll-label">${entry.label}</span>
+        <span class="roll-arrow">▸</span>
+        <span class="roll-result">${entry.result}</span>
+      </div>`;
+    }
+    if (entry.type === "formula") {
+      return `<div class="roll-step roll-step-formula">
+        <span class="roll-badge roll-badge-formula">${entry.expression} = ${entry.result.toLocaleString("pt-BR")}</span>
+        <span class="roll-label">${entry.label}</span>
+      </div>`;
+    }
+    return "";
+  }).join("");
 }
 
 function getND() {
   const nd = document.getElementById("ndSelector").value;
+
+  rollLog = [];
   const riches = getValueFromDict("richesDict", nd);
+  const richesLog = [...rollLog];
+
+  rollLog = [];
   const equip = getValueFromDict("equipmentDict", nd);
+  const equipLog = [...rollLog];
+
+  const noRiches = riches === "-";
+  const noEquip = equip === "-";
+
+  const richesLogHTML = richesLog.length > 0 ? `
+    <div class="roll-section">
+      <div class="roll-section-title">Riquezas</div>
+      ${renderRollLog(richesLog)}
+    </div>` : "";
+
+  const equipLogHTML = equipLog.length > 0 ? `
+    <div class="roll-section">
+      <div class="roll-section-title">Equipamento</div>
+      ${renderRollLog(equipLog)}
+    </div>` : "";
+
+  const hasLog = richesLog.length > 0 || equipLog.length > 0;
 
   document.getElementById("result").innerHTML = `
-    <p class="reward">Riquezas: ${riches}</p>
-    <p class="reward">Equipamento: ${equip}</p>
+    <div class="result-summary">
+      <div class="reward-row">
+        <span class="reward-label">Riquezas</span>
+        <span class="reward-value${noRiches ? " reward-none" : ""}">${noRiches ? "—" : riches}</span>
+      </div>
+      <div class="reward-row">
+        <span class="reward-label">Equipamento</span>
+        <span class="reward-value${noEquip ? " reward-none" : ""}">${noEquip ? "—" : equip}</span>
+      </div>
+    </div>
+    ${hasLog ? `
+    <details class="roll-log">
+      <summary><span class="log-toggle-icon">▸</span> Ver detalhes das rolagens</summary>
+      <div class="roll-log-content">
+        ${richesLogHTML}
+        ${equipLogHTML}
+      </div>
+    </details>` : ""}
   `;
+
+  document.getElementById("result").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
