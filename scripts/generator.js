@@ -145,23 +145,6 @@ function rareItemGenerator(rolls, die, modifier, dictName) {
 }
 
 // --- GERADORES DE ITENS MÁGICOS ---
-
-function getWeaponBaseBonus(tier) {
-  for (let i = 0; i < 10; i++) {
-    const result = rollFromTable(dictionaries.magic_weapons[tier], "Bônus base (re-rolagem)");
-    if (result?.type === "magic_bonus") return result;
-  }
-  return { bonus: 1, price_add: 2000 };
-}
-
-function getArmorBaseBonus(tier) {
-  for (let i = 0; i < 10; i++) {
-    const result = rollFromTable(dictionaries.magic_armors[tier], "Bônus base (re-rolagem)");
-    if (result?.type === "magic_bonus") return result;
-  }
-  return { bonus: 1, price_add: 1000 };
-}
-
 function magicWeaponGenerator(tier) {
   const baseWeapon = equipmentGenerator("weapons");
   if (typeof baseWeapon !== "string") return baseWeapon;
@@ -173,44 +156,47 @@ function magicWeaponGenerator(tier) {
   const dict = dictionaries.magic_weapons[tier];
   if (!dict) return "Erro: tabela de armas mágicas não encontrada";
 
-  let keepRolling = true;
-  while (keepRolling && totalEquiv < 10) {
-    const result = rollFromTable(dict, `Arma mágica (${tier})`);
+  while (totalEquiv < 10) {
+    const result = rollFromTable(dict, `Propriedade mágica (${tier})`);
     if (!result) break;
 
     if (result.type === "magic_bonus") {
       const desiredBonus = result.bonus;
       const newBonus = Math.min(magicBonus + desiredBonus, 5);
       const addedBonus = newBonus - magicBonus;
-      magicBonus = newBonus;
-      totalEquiv += addedBonus;
-      if (magicBonus >= 5) {
-
+      if (addedBonus > 0) {
+        magicBonus = newBonus;
+        totalEquiv += addedBonus;
       }
+
     } else if (result.type === "special_power") {
-      const powerDict = dictionaries[result.dict][tier];
-      const power = rollFromTable(powerDict, "Poder especial");
-      if (power) {
-        const equiv = power.bonus_equiv || 0;
-        if (totalEquiv + equiv > 10) {
-          keepRolling = false;
-        } else {
-          powers.push({ name: power.name, bonus_equiv: equiv });
-          totalEquiv += equiv;
+      const powerDict = dictionaries[result.dict]?.[tier];
+      if (!powerDict) continue;
+      const power = rollFromTable(powerDict, "Poder específico");
+      if (!power) continue;
+
+      const equiv = power.bonus_equiv || 0;
+      if (totalEquiv + equiv > 10) {
+        break;
+      }
+      powers.push({ name: power.name, bonus_equiv: equiv });
+      totalEquiv += equiv;
+
+    } else if (result.type === "specific") {
+      const specificDict = dictionaries[result.dict]?.[tier];
+      if (specificDict) {
+        const specificItem = rollFromTable(specificDict, "Arma específica");
+        if (specificItem) {
+          return `${specificItem.name} (${formatPrice(specificItem.price)})`;
         }
       }
-    } else if (result.type === "specific") {
-      const specificDict = dictionaries[result.dict][tier];
-      const specificItem = rollFromTable(specificDict, "Arma específica");
-      if (specificItem) {
-        return `${specificItem.name} (${formatPrice(specificItem.price)})`;
-      }
-      keepRolling = false;
+      break;
+
     } else {
-      keepRolling = false;
+      break;
     }
 
-    if (totalEquiv >= 10) keepRolling = false;
+    if (totalEquiv >= 10) break;
   }
 
   let description = baseWeapon;
@@ -239,54 +225,50 @@ function magicArmorGenerator(tier) {
   const dict = dictionaries.magic_armors[tier];
   if (!dict) return "Erro: tabela de armaduras mágicas não encontrada";
 
-  let keepRolling = true;
-  while (keepRolling && totalEquiv < 10) {
-    const result = rollFromTable(dict, `Armadura mágica (${tier})`);
+  while (totalEquiv < 10) {
+    const result = rollFromTable(dict, `Propriedade mágica (${tier})`);
     if (!result) break;
 
     if (result.type === "magic_bonus") {
       const desiredBonus = result.bonus;
       const newBonus = Math.min(magicBonus + desiredBonus, 5);
       const addedBonus = newBonus - magicBonus;
-      magicBonus = newBonus;
-      totalEquiv += addedBonus;
+      if (addedBonus > 0) {
+        magicBonus = newBonus;
+        totalEquiv += addedBonus;
+      }
     } else if (result.type === "special_power") {
-      const powerDict = dictionaries[result.dict][tier];
-      const power = rollFromTable(powerDict, "Poder especial");
-      if (power) {
-        const equiv = power.bonus_equiv || 0;
-        if (totalEquiv + equiv > 10) {
-          keepRolling = false;
-        } else {
-          powers.push({ name: power.name, bonus_equiv: equiv });
-          totalEquiv += equiv;
+      const powerDict = dictionaries[result.dict]?.[tier];
+      if (!powerDict) continue;
+      const power = rollFromTable(powerDict, "Poder específico");
+      if (!power) continue;
+
+      const equiv = power.bonus_equiv || 0;
+      if (totalEquiv + equiv > 10) break;
+      powers.push({ name: power.name, bonus_equiv: equiv });
+      totalEquiv += equiv;
+    } else if (result.type === "specific") {
+      const specificDict = dictionaries[result.dict]?.[tier];
+      if (specificDict) {
+        const specificItem = rollFromTable(specificDict, "Armadura específica");
+        if (specificItem) {
+          return `${specificItem.name} (${formatPrice(specificItem.price)})`;
         }
       }
-    } else if (result.type === "specific") {
-      const specificDict = dictionaries[result.dict][tier];
-      const specificItem = rollFromTable(specificDict, "Armadura específica");
-      if (specificItem) {
-        return `${specificItem.name} (${formatPrice(specificItem.price)})`;
-      }
-      keepRolling = false;
+      break;
     } else {
-      keepRolling = false;
+      break;
     }
 
-    if (totalEquiv >= 10) keepRolling = false;
+    if (totalEquiv >= 10) break;
   }
 
   let description = baseArmor;
-  if (magicBonus > 0) {
-    description += ` +${magicBonus}`;
-  }
+  if (magicBonus > 0) description += ` +${magicBonus}`;
   if (powers.length > 0) {
-    const powerNames = powers.map(p => p.name).join(" e ");
-    description += ` ${powerNames}`;
+    description += ` ${powers.map(p => p.name).join(" e ")}`;
   }
-  if (totalEquiv > 0) {
-    description += ` (equiv. +${totalEquiv})`;
-  }
+  if (totalEquiv > 0) description += ` (equiv. +${totalEquiv})`;
 
   return description;
 }
