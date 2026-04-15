@@ -156,9 +156,9 @@ function magicWeaponGenerator(tier) {
   const dict = dictionaries.magic_weapons[tier];
   if (!dict) return "Erro: tabela de armas mágicas não encontrada";
 
-  function rollOnce() {
+  function processOneRoll() {
     const result = rollFromTable(dict, `Propriedade mágica (${tier})`);
-    if (!result) return false;
+    if (!result) return "stop";
 
     if (result.type === "magic_bonus") {
       const desiredBonus = result.bonus;
@@ -168,7 +168,7 @@ function magicWeaponGenerator(tier) {
         magicBonus = newBonus;
         totalEquiv += addedBonus;
       }
-      return false;
+      return "stop";
     }
 
     if (result.type === "specific") {
@@ -176,37 +176,40 @@ function magicWeaponGenerator(tier) {
       if (specificDict) {
         const specificItem = rollFromTable(specificDict, "Arma específica");
         if (specificItem) {
-          return specificItem;
+          return { specific: true, name: specificItem.name, price: specificItem.price };
         }
       }
-      return false;
+      return "stop";
     }
 
     if (result.type === "special_power") {
       const powerDict = dictionaries[result.dict]?.[tier];
-      if (!powerDict) return false;
+      if (!powerDict) return "stop";
       const power = rollFromTable(powerDict, "Poder específico");
-      if (!power) return false;
+      if (!power) return "stop";
 
       const equiv = power.bonus_equiv || 0;
       if (totalEquiv + equiv > 10) {
-        return false;
+        return "stop";
       }
       powers.push({ name: power.name, bonus_equiv: equiv });
       totalEquiv += equiv;
-      return true;
+      return "continue";
     }
 
-    return false;
+    return "stop";
   }
 
-  let shouldContinue = true;
-  while (shouldContinue && totalEquiv < 10) {
-    const continueResult = rollOnce();
-    if (continueResult === false) {
-      shouldContinue = false;
-    } else if (typeof continueResult === "object" && continueResult.name) {
-      return `${continueResult.name} (${formatPrice(continueResult.price)})`;
+  let action = processOneRoll();
+
+  if (action && typeof action === "object" && action.specific) {
+    return `${action.name} (${formatPrice(action.price)})`;
+  }
+
+  while (action === "continue" && totalEquiv < 10) {
+    action = processOneRoll();
+    if (action && typeof action === "object" && action.specific) {
+      return `${action.name} (${formatPrice(action.price)})`;
     }
   }
 
@@ -231,9 +234,9 @@ function magicArmorGenerator(tier) {
   const dict = dictionaries.magic_armors[tier];
   if (!dict) return "Erro: tabela de armaduras mágicas não encontrada";
 
-  function rollOnce() {
+  function processOneRoll() {
     const result = rollFromTable(dict, `Propriedade mágica (${tier})`);
-    if (!result) return false;
+    if (!result) return "stop";
 
     if (result.type === "magic_bonus") {
       const desiredBonus = result.bonus;
@@ -243,7 +246,7 @@ function magicArmorGenerator(tier) {
         magicBonus = newBonus;
         totalEquiv += addedBonus;
       }
-      return false;
+      return "stop";
     }
 
     if (result.type === "specific") {
@@ -251,37 +254,39 @@ function magicArmorGenerator(tier) {
       if (specificDict) {
         const specificItem = rollFromTable(specificDict, "Armadura específica");
         if (specificItem) {
-          return specificItem;
+          return { specific: true, name: specificItem.name, price: specificItem.price };
         }
       }
-      return false;
+      return "stop";
     }
 
     if (result.type === "special_power") {
       const powerDict = dictionaries[result.dict]?.[tier];
-      if (!powerDict) return false;
+      if (!powerDict) return "stop";
       const power = rollFromTable(powerDict, "Poder específico");
-      if (!power) return false;
+      if (!power) return "stop";
 
       const equiv = power.bonus_equiv || 0;
       if (totalEquiv + equiv > 10) {
-        return false;
+        return "stop";
       }
       powers.push({ name: power.name, bonus_equiv: equiv });
       totalEquiv += equiv;
-      return true;
+      return "continue";
     }
 
-    return false;
+    return "stop";
   }
 
-  let shouldContinue = true;
-  while (shouldContinue && totalEquiv < 10) {
-    const continueResult = rollOnce();
-    if (continueResult === false) {
-      shouldContinue = false;
-    } else if (typeof continueResult === "object" && continueResult.name) {
-      return `${continueResult.name} (${formatPrice(continueResult.price)})`;
+  let action = processOneRoll();
+  if (action && typeof action === "object" && action.specific) {
+    return `${action.name} (${formatPrice(action.price)})`;
+  }
+
+  while (action === "continue" && totalEquiv < 10) {
+    action = processOneRoll();
+    if (action && typeof action === "object" && action.specific) {
+      return `${action.name} (${formatPrice(action.price)})`;
     }
   }
 
