@@ -156,9 +156,9 @@ function magicWeaponGenerator(tier) {
   const dict = dictionaries.magic_weapons[tier];
   if (!dict) return "Erro: tabela de armas mágicas não encontrada";
 
-  while (totalEquiv < 10) {
+  function rollOnce() {
     const result = rollFromTable(dict, `Propriedade mágica (${tier})`);
-    if (!result) break;
+    if (!result) return false;
 
     if (result.type === "magic_bonus") {
       const desiredBonus = result.bonus;
@@ -168,48 +168,54 @@ function magicWeaponGenerator(tier) {
         magicBonus = newBonus;
         totalEquiv += addedBonus;
       }
+      return false;
+    }
 
-    } else if (result.type === "special_power") {
-      const powerDict = dictionaries[result.dict]?.[tier];
-      if (!powerDict) continue;
-      const power = rollFromTable(powerDict, "Poder específico");
-      if (!power) continue;
-
-      const equiv = power.bonus_equiv || 0;
-      if (totalEquiv + equiv > 10) {
-        break;
-      }
-      powers.push({ name: power.name, bonus_equiv: equiv });
-      totalEquiv += equiv;
-
-    } else if (result.type === "specific") {
+    if (result.type === "specific") {
       const specificDict = dictionaries[result.dict]?.[tier];
       if (specificDict) {
         const specificItem = rollFromTable(specificDict, "Arma específica");
         if (specificItem) {
-          return `${specificItem.name} (${formatPrice(specificItem.price)})`;
+          return specificItem;
         }
       }
-      break;
-
-    } else {
-      break;
+      return false;
     }
 
-    if (totalEquiv >= 10) break;
+    if (result.type === "special_power") {
+      const powerDict = dictionaries[result.dict]?.[tier];
+      if (!powerDict) return false;
+      const power = rollFromTable(powerDict, "Poder específico");
+      if (!power) return false;
+
+      const equiv = power.bonus_equiv || 0;
+      if (totalEquiv + equiv > 10) {
+        return false;
+      }
+      powers.push({ name: power.name, bonus_equiv: equiv });
+      totalEquiv += equiv;
+      return true;
+    }
+
+    return false;
+  }
+
+  let shouldContinue = true;
+  while (shouldContinue && totalEquiv < 10) {
+    const continueResult = rollOnce();
+    if (continueResult === false) {
+      shouldContinue = false;
+    } else if (typeof continueResult === "object" && continueResult.name) {
+      return `${continueResult.name} (${formatPrice(continueResult.price)})`;
+    }
   }
 
   let description = baseWeapon;
-  if (magicBonus > 0) {
-    description += ` +${magicBonus}`;
-  }
+  if (magicBonus > 0) description += ` +${magicBonus}`;
   if (powers.length > 0) {
-    const powerNames = powers.map(p => p.name).join(" e ");
-    description += ` ${powerNames}`;
+    description += ` ${powers.map(p => p.name).join(" e ")}`;
   }
-  if (totalEquiv > 0) {
-    description += ` (equiv. +${totalEquiv})`;
-  }
+  if (totalEquiv > 0) description += ` (equiv. +${totalEquiv})`;
 
   return description;
 }
@@ -225,9 +231,9 @@ function magicArmorGenerator(tier) {
   const dict = dictionaries.magic_armors[tier];
   if (!dict) return "Erro: tabela de armaduras mágicas não encontrada";
 
-  while (totalEquiv < 10) {
+  function rollOnce() {
     const result = rollFromTable(dict, `Propriedade mágica (${tier})`);
-    if (!result) break;
+    if (!result) return false;
 
     if (result.type === "magic_bonus") {
       const desiredBonus = result.bonus;
@@ -237,30 +243,46 @@ function magicArmorGenerator(tier) {
         magicBonus = newBonus;
         totalEquiv += addedBonus;
       }
-    } else if (result.type === "special_power") {
-      const powerDict = dictionaries[result.dict]?.[tier];
-      if (!powerDict) continue;
-      const power = rollFromTable(powerDict, "Poder específico");
-      if (!power) continue;
+      return false;
+    }
 
-      const equiv = power.bonus_equiv || 0;
-      if (totalEquiv + equiv > 10) break;
-      powers.push({ name: power.name, bonus_equiv: equiv });
-      totalEquiv += equiv;
-    } else if (result.type === "specific") {
+    if (result.type === "specific") {
       const specificDict = dictionaries[result.dict]?.[tier];
       if (specificDict) {
         const specificItem = rollFromTable(specificDict, "Armadura específica");
         if (specificItem) {
-          return `${specificItem.name} (${formatPrice(specificItem.price)})`;
+          return specificItem;
         }
       }
-      break;
-    } else {
-      break;
+      return false;
     }
 
-    if (totalEquiv >= 10) break;
+    if (result.type === "special_power") {
+      const powerDict = dictionaries[result.dict]?.[tier];
+      if (!powerDict) return false;
+      const power = rollFromTable(powerDict, "Poder específico");
+      if (!power) return false;
+
+      const equiv = power.bonus_equiv || 0;
+      if (totalEquiv + equiv > 10) {
+        return false;
+      }
+      powers.push({ name: power.name, bonus_equiv: equiv });
+      totalEquiv += equiv;
+      return true;
+    }
+
+    return false;
+  }
+
+  let shouldContinue = true;
+  while (shouldContinue && totalEquiv < 10) {
+    const continueResult = rollOnce();
+    if (continueResult === false) {
+      shouldContinue = false;
+    } else if (typeof continueResult === "object" && continueResult.name) {
+      return `${continueResult.name} (${formatPrice(continueResult.price)})`;
+    }
   }
 
   let description = baseArmor;
