@@ -1,0 +1,938 @@
+{
+	"combate": {
+		"Acerto Crítico Aprimorado": {
+			"prerequisitos": [
+				"Foco em Arma com a arma escolhida",
+				"bônus base de ataque +8"
+			],
+			"desc": "Você sabe desferir golpes mortais com sua arma escolhida. Benefício: escolha uma arma. Sua margem de ameaça com esta arma aumenta em +2."
+		},
+		"Acuidade com Arma": {
+			"prerequisitos": ["Des 13"],
+			"desc": "Você é especialmente eficaz com armas leves, que usam mais agilidade do que força bruta. Benefício: quando usa armas leves de corpo-a-corpo, você pode usar seu modificador de Destreza em vez de Força em jogadas de ataque."
+		},
+		"Agarrar Aprimorado": {
+			"prerequisitos": ["For 13", "Ataque Desarmado Aprimorado"],
+			"desc": "Você consegue agarrar melhor seus oponentes. Benefício: +4 em jogadas de ataque para agarrar."
+		},
+		"Aparar": {
+			"prerequisitos": [
+				"Des 15",
+				"Acuidade com Arma",
+				"Especialização em Combate",
+				"bônus base de ataque +6"
+			],
+			"desc": "Você pode usar sua arma para bloquear ataques. Benefício: você pode tentar aparar um ataque corpo-a-corpo que iria atingi-lo. Faça uma jogada de ataque como uma reação, uma vez por ataque. Se o resultado da sua jogada for maior que o do oponente, você evita o ataque. Você só pode usar este talento se estiver usando uma arma afetada pelo talento Acuidade com Arma. Custo: 1 PM por uso."
+		},
+		"Arma Elemental": {
+			"prerequisitos": ["mashin"],
+			"desc": "Você transfere sua energia elemental para suas armas. Benefício: como uma ação livre, você transfere a energia escolhida para habilidade de raça cura elemental para seus ataques, que causam +1d6 pontos de dano adicional do elemento escolhido durante uma rodada. Especial: se você tem mais de uma energia escolhida, pode escolher qual energia vai aplicar a seus ataques. Custo: 1 PM."
+		},
+		"Arma Exagerada": {
+			"prerequisitos": ["nezumi", "For 13", "Ataque Poderoso"],
+			"desc": "Você pode ser pequeno, mas suas armas não são. Benefício: você pode usar armas como se fosse uma criatura Grande."
+		},
+		"Arma Implantada": {
+			"prerequisitos": ["mashin"],
+			"desc": "Você tem uma arma implantada no corpo. Benefício: escolha uma arma obra-prima de ataque corpo-a-corpo ou de disparo (mas não de arremesso) que você possua. A arma fica recolhida em um compartimento em seu corpo, podendo ser empunhada ou guardada com uma ação livre. Uma arma implantada não pode ser roubada ou desarmada. Você pode trocar sua arma implantada por outra com um teste de Ofício (metalurgia) em uma hora (CD 10), ou uma ação completa (CD 20). Apenas armas obra-prima podem ser implantadas. Especial: você pode ter várias armas implantadas, escolhendo este talento mais vezes."
+		},
+		"Ataque Atordoante": {
+			"prerequisitos": ["Sab 13", "Ataque Desarmado Aprimorado"],
+			"desc": "Você sabe atingir áreas vulneráveis de seus inimigos. Benefício: declare que está usando este talento antes de fazer um ataque desarmado. Se você acertar o ataque, a vítima deve fazer um teste de Fortitude (CD 15). Se falhar, fica atordoada por uma rodada. Custo: 1 PM. Se gastar tantos PM quanto um jutsu de grau apropriado, a CD do teste de Fortitude aumenta de acordo."
+		},
+		"Ataque Desarmado Aprimorado": {
+			"prerequisitos": [],
+			"desc": "Você sabe lutar sem armas. Benefício: seus ataques desarmados causam 1d4 pontos de dano, e podem causar dano letal ou não letal (à sua escolha). Normal: sem este talento, ataques desarmados causam 1d3 pontos de dano, e podem causar apenas dano não-letal. Especial: este dano é para criaturas de tamanho Médio. Se você pertence a outra categoria de tamanho, consulte a tabela 'Dano de Armas por Tamanho'."
+		},
+		"Ataque Duplo": {
+			"prerequisitos": [
+				"Foco em Arma com a arma escolhida",
+				"bônus base de ataque +6"
+			],
+			"desc": "Você consegue atacar com velocidade impressionante com sua arma escolhida. Benefício: se estiver usando sua arma escolhida e fizer a ação padrão atacar, você pode fazer um ataque adicional com essa arma. Custo: 2 PM."
+		},
+		"Ataque Giratório": {
+			"prerequisitos": [
+				"Des 13",
+				"Esquiva",
+				"Mobilidade",
+				"Ataque em Movimento",
+				"bônus base de ataque +6"
+			],
+			"desc": "Você é capaz de atacar todos os oponentes à sua volta em combate corpo-a-corpo. Benefício: se fizer a ação padrão atacar, você pode fazer um ataque corpo-a-corpo contra cada oponente no seu alcance no lugar de todos os seus outros ataques."
+		},
+		"Ataque em Movimento": {
+			"prerequisitos": [
+				"Des 13",
+				"Esquiva",
+				"Mobilidade",
+				"bônus base de ataque +4"
+			],
+			"desc": "Você faz ataques rápidos e se movimenta com agilidade. Benefício: quando estiver atacando corpo-a-corpo, você pode se mover antes e depois do ataque, desde que a distância total percorrida não seja maior que seu deslocamento. Você não pode usar este talento se estiver de armadura pesada. Normal: você pode se mover antes ou depois de um ataque, mas não ambos."
+		},
+		"Ataque Poderoso": {
+			"prerequisitos": ["For 13"],
+			"desc": "Você pode sacrificar energia e precisão para desferir um golpe destruidor. Benefício: declare que está usando este talento antes de fazer um ataque corpo-a-corpo. Você sofre uma penalidade de –2 na jogada de ataque, mas recebe +4 na jogada de dano. Custo: 1 PM para aumentar o bônus no dano em +2, cumulativo."
+		},
+		"Ataque Preciso": {
+			"prerequisitos": [
+				"Des 13",
+				"Acuidade com Arma",
+				"Especialização em Combate"
+			],
+			"desc": "Com lâminas leves, você golpeia com precisão mortal. Benefício: quando usa uma arma afetada pelo talento Acuidade com Arma, você soma seu bônus de Destreza (além do bônus de Força) em jogadas de dano."
+		},
+		"Atropelar Aprimorado": {
+			"prerequisitos": ["For 13", "Ataque Poderoso"],
+			"desc": "Você não tem medo de passar por cima de seus oponentes. Benefício: quando você realiza a manobra atropelar, o alvo não pode escolher evitá-lo. Além disso, você recebe +4 em jogadas de ataque para atropelar."
+		},
+		"Auxílio de Mira": {
+			"prerequisitos": ["mashin"],
+			"desc": "Alças de mira em seus sistemas óticos ajudam a fazer disparos mortais. Benefício: como uma ação livre, você pode aumentar sua margem de ameaça com armas de ataque à distância em +1 por 1 rodada. Custo: 1 PM."
+		},
+		"Blindagem": {
+			"prerequisitos": ["mashin"],
+			"desc": "Seu corpo é revestido de blindagem, e seus sistemas críticos ganham proteção reforçada. Benefício: escolha uma armadura obra-prima que você possua e saiba usar. A armadura é permanentemente instalada em seu corpo, podendo ser vestida ou recolhida com uma ação livre. Ela não pode ser roubada. Além disso, ao instalar uma armadura leve, você tem 25% de chance de ignorar o dano adicional de um acerto crítico ou ataque furtivo; 75% com uma armadura média; e 100% com uma armadura pesada. Você pode trocar a blindagem por outra com um teste de Ofício (metalurgia) em uma hora (CD 10). Apenas armaduras obra-prima podem ser instaladas."
+		},
+		"Bloqueio Ambidextro": {
+			"prerequisitos": ["Des 15", "Combater com Duas Armas"],
+			"desc": "Você é habilidoso em se defender usando duas armas ou uma arma dupla. Benefício: se usar o talento Combater com Duas Armas, você recebe +2 na classe de armadura até o seu próximo turno."
+		},
+		"Campo de Força": {
+			"prerequisitos": ["mashin"],
+			"desc": "Você pode projetar barreiras de energia. Benefício: você aprende e pode executar o jutsu mandala-escudo, mesmo que não tenha chacras abertos."
+		},
+		"Casca Grossa": {
+			"prerequisitos": ["Con 13"],
+			"desc": "Sua pele dura e calejada resiste a ferimentos. Benefício: você soma seu bônus de Constituição na CA. Este bônus não é cumulativo com armaduras ou vestimentas mágicas."
+		},
+		"Combate Montado": {
+			"prerequisitos": ["treinado em Cavalgar"],
+			"desc": "Você sabe lutar cavalgando. Benefício: você pode tentar desviar um ataque que iria atingir sua montaria. Faça um teste de Cavalgar como uma reação, uma vez por ataque. Se o resultado for maior que a jogada de ataque do oponente, você evita o ataque. Além disso, quando está montado e faz uma investida, você pode continuar se movendo depois do ataque. Custo: 1 PM por uso."
+		},
+		"Combater com Duas Armas": {
+			"prerequisitos": ["Des 15"],
+			"desc": "Você é treinado em usar uma arma em cada mão. Benefício: se estiver usando uma arma de uma mão e uma arma leve, ou duas armas leves, e fizer a ação padrão atacar, você pode fazer um ataque com cada arma. No entanto, sofre uma penalidade de –4 em ambas as jogadas de ataque. Especial: se você tiver mais mãos e estiver empunhando no máximo uma arma de uma mão, pode atacar com todas elas, sofrendo a mesma penalidade."
+		},
+		"Combater com Duas Armas Aprimorado": {
+			"prerequisitos": [
+				"Des 17",
+				"Combater com Duas Armas",
+				"bônus base de ataque +6"
+			],
+			"desc": "Você é especialista em usar uma arma em cada mão. Benefício: usando o talento Combater com Duas Armas, sua penalidade em jogadas de ataque diminui para –2."
+		},
+		"Combater com Duas Armas Maior": {
+			"prerequisitos": [
+				"Des 19",
+				"Combater com Duas Armas",
+				"Combater com Duas Armas Aprimorado",
+				"bônus base de ataque +11"
+			],
+			"desc": "Você é um mestre em usar uma arma em cada mão. Benefício: usando o talento Combater com Duas Armas, você não sofre nenhuma penalidade em jogadas de ataque."
+		},
+		"Derrubar Aprimorado": {
+			"prerequisitos": ["Int 13", "Especialização em Combate"],
+			"desc": "Você sabe derrubar inimigos em combate corpo-a-corpo. Benefício: +4 em jogadas de ataque para derrubar."
+		},
+		"Desarmar Aprimorado": {
+			"prerequisitos": ["Int 13", "Especialização em Combate"],
+			"desc": "Você sabe desarmar inimigos em combate corpo-a-corpo. Benefício: +4 em jogadas de ataque para desarmar."
+		},
+		"Desbastar": {
+			"prerequisitos": ["nezumi", "Mordida de Rato"],
+			"desc": "Nezumi podem roer objetos para criar obras de arte. Mas muitos preferem roer as armaduras, roupas, pele e ossos de seus inimigos. Benefício: ao acertar um ataque de mordida, você reduz a CA do alvo em –1 (cumulativo). Esse efeito dura até o fim da cena."
+		},
+		"Desviar Objetos": {
+			"prerequisitos": ["Des 13", "Ataque Desarmado Aprimorado"],
+			"desc": "Você pode desviar flechas, shuriken, kunai e outras armas arremessadas ou disparadas contra você. Benefício: faça uma jogada de ataque como uma reação, uma vez por ataque. Se o resultado for maior que o do oponente, você evita o ataque. Você só pode usar este talento se estiver com uma mão livre. Projéteis muito grandes ou jutsus não podem ser desviados. Custo: 1 PM por uso. Além disso, se você desviar uma arma de arremesso, pode pagar 2 PM para apanhá-la e atirá-la de volta como reação."
+		},
+		"Duro de Matar": {
+			"prerequisitos": [],
+			"desc": "Você resiste a ferimentos que fariam outros cair. Benefício: quando você sofre dano que poderia levá-lo a 0 ou menos pontos de vida, você pode ignorar completamente esse dano. Custo: 4 PM por uso."
+		},
+		"Empunhadura Poderosa": {
+			"prerequisitos": ["For 17"],
+			"desc": "Você consegue usar armas grandes. Exageradamente grandes. Benefício: ao usar armas uma categoria de tamanho acima da sua, sua penalidade cai para –2. Normal: um personagem sem este talento usando uma arma uma categoria de tamanho acima da própria sofre penalidade de –4 em jogadas de ataque."
+		},
+		"Empurrar Aprimorado": {
+			"prerequisitos": ["For 13", "Ataque Poderoso"],
+			"desc": "Você sabe como fazer seus inimigos recuarem. Benefício: +4 em jogadas de ataque para empurrar."
+		},
+		"Especialização em Arma": {
+			"prerequisitos": ["kensei 4º nível"],
+			"desc": "Seus golpes com a arma eleita causam ferimentos profundos. Benefício: usando sua arma eleita, você recebe +2 em jogadas de dano."
+		},
+		"Especialização em Arma Aprimorada": {
+			"prerequisitos": [
+				"Foco em Arma Aprimorado",
+				"Especialização em Arma",
+				"kensei 12º nível"
+			],
+			"desc": "Seus golpes com a arma eleita causam ferimentos terríveis. Benefício: seu bônus no dano pelo talento Especialização em Arma aumenta para +4."
+		},
+		"Especialização em Armadura": {
+			"prerequisitos": [
+				"Foco em Armadura do tipo escolhido",
+				"bushi 8º nível"
+			],
+			"desc": "Escolha um tipo de armadura entre leve, média ou pesada. Você sabe usar esse tipo de armadura para absorver os golpes. Benefício: quando usando uma armadura do tipo escolhido, você recebe redução de dano 2."
+		},
+		"Especialização em Combate": {
+			"prerequisitos": ["Int 13"],
+			"desc": "Você é capaz de usar suas habilidades de combate tanto para atacar quanto para se defender. Benefício: declare que está usando este talento antes de fazer um ataque corpo-a-corpo. Você sofre –2 na jogada de ataque, mas recebe CA+4 até o próximo turno."
+		},
+		"Esquiva": {
+			"prerequisitos": ["Des 13"],
+			"desc": "Você é bom em esquivar-se de golpes. Benefício: você recebe CA+1."
+		},
+		"Foco em Arma": {
+			"prerequisitos": [
+				"saber usar a arma escolhida",
+				"bônus base de ataque +1"
+			],
+			"desc": "Você sabe lutar melhor com sua arma escolhida. Benefício: escolha uma arma. Você recebe +1 em jogadas de ataque com a arma escolhida."
+		},
+		"Foco em Arma Aprimorado": {
+			"prerequisitos": ["kensei 8º nível"],
+			"desc": "Você sabe lutar ainda melhor com sua arma escolhida. Benefício: quando usando sua arma escolhida, seu bônus pelo talento Foco em Arma aumenta para +2."
+		},
+		"Foco em Armadura": {
+			"prerequisitos": ["saber usar o tipo de armadura escolhido"],
+			"desc": "Você é mais hábil em defesa e movimento com um tipo de armadura. Benefício: escolha um tipo de armadura entre leve, média ou pesada. Quando usando uma armadura do tipo escolhido, você aumenta sua CA em +1 e diminui sua penalidade de armadura em –1."
+		},
+		"Golpe com Duas Mãos": {
+			"prerequisitos": ["For 15", "Ataque Poderoso"],
+			"desc": "Você consegue canalizar toda a sua força quando usa uma arma com as duas mãos. Benefício: quando usando uma arma de corpo-a-corpo com as duas mãos, você soma o dobro de seu modificador de Força às jogadas de dano. Este talento não pode ser usado com armas leves."
+		},
+		"Honra Suprema": {
+			"prerequisitos": ["ryuujin"],
+			"desc": "Você é ainda mais impiedoso contra os desonrados. Benefício: seus bônus contra oponentes com valor de Honra inferior ao seu aumentam para +2. Normal: ryuujin recebem +1 na CA e +1 nas jogadas de ataque e dano contra adversários com valor de Honra inferior ao seu."
+		},
+		"Infinita Munção": {
+			"prerequisitos": ["mashin", "saber usar a arma escolhida"],
+			"desc": "Incríveis aparelhos arcanos em seu corpo extraem matérias-primas de outros mundos e produzem projéteis ou armas de arremesso. Benefício: escolha entre uma arma de arremesso de dano por corte ou perfuração (kunai, shuriken), ou uma arma de disparo já selecionada para o talento Arma Implantada. Seu corpo produz versões comuns, não obra-prima, da arma de arremesso escolhida, ou munição para a arma de disparo escolhida em quantidade infinita (não é necessário recarregá-la). No caso de armas de arremesso, as lâminas surgem automaticamente em suas mãos (sacá-las é uma ação livre). Uma vez produzidas, armas e munição se desfazem em 1 minuto."
+		},
+		"Investida Implacável": {
+			"prerequisitos": [
+				"treinado em Cavalgar",
+				"Combate Montado",
+				"Investida Montada"
+			],
+			"desc": "Você realiza ataques devastadores cavalgando em investida. Benefício: quando está montado e faz uma investida, você causa dano dobrado."
+		},
+		"Lutar às Cegas": {
+			"prerequisitos": [],
+			"desc": "Você tem maiores chances de atingir alvos que não possa ver. Benefício: sempre que você erra um ataque devido a camuflagem, pode rolar mais uma vez a chance de acertar. Além disso, você não fica desprevenido contra inimigos que não possa ver."
+		},
+		"Mestre em Arma": {
+			"prerequisitos": [
+				"Especialização em Arma",
+				"Especialização em Arma Aprimorada",
+				"Foco em Arma Aprimorado",
+				"kensei 16º nível"
+			],
+			"desc": "Você é um dos melhores guerreiros do mundo com sua arma eleita. Benefício: usando sua arma eleita, você recebe um bônus de +1 em jogadas de ataque e dano, na margem de ameaça e no multiplicador de crítico. Além disso, você pode rolar outra vez uma jogada de ataque que tenha recém realizado. Você deve aceitar a segunda rolagem, mesmo sendo pior que a primeira. Custo: 4 PM para rolar novamente um ataque."
+		},
+		"Mira Apurada": {
+			"prerequisitos": ["Sab 13", "Tiro Certeiro", "Tiro Longo"],
+			"desc": "Seus disparos têm precisão mortal. Benefício: você pode gastar uma ação de movimento para mirar um alvo. Se fizer isso, recebe +1 em jogadas de ataque à distância contra ele na mesma rodada."
+		},
+		"Mira Mortal": {
+			"prerequisitos": [
+				"Des 17",
+				"Sab 13",
+				"Mira Apurada",
+				"Tiro Certeiro",
+				"Tiro Longo",
+				"bônus base de ataque +11"
+			],
+			"desc": "Entre os olhos. No coração. É onde seus disparos costumam acertar! Benefício: sua margem de ameaça com armas de ataque à distância aumenta em +1."
+		},
+		"Mobilidade": {
+			"prerequisitos": ["Des 13", "Esquiva"],
+			"desc": "Você é hábil em esquivar-se enquanto se movimenta. Benefício: você recebe CA+2 sempre que usa uma ação de movimento para deslocar-se."
+		},
+		"Mordida de Rato": {
+			"prerequisitos": ["nezumi"],
+			"desc": "Você não tem medo de sujar os dentes. Benefício: você ganha uma arma natural de mordida, que causa 1d4 pontos de dano. Se fizer a ação padrão atacar, pode fazer um ataque adicional com a mordida. No entanto, sofre uma penalidade de –4 em ambas as jogadas de ataque."
+		},
+		"Na Mosca": {
+			"prerequisitos": ["Des 13", "Tiro Certeiro", "Tiro Preciso"],
+			"desc": "Sua mira é incrível e seus disparos acertam onde dói mais. Benefício: você soma seu modificador de Destreza em jogadas de dano com armas de ataque à distância."
+		},
+		"Pisotear": {
+			"prerequisitos": ["treinado em Cavalgar", "Combate Montado"],
+			"desc": "Você sabe usar sua montaria para atropelar oponentes. Benefício: quando você está montado e realiza a manobra atropelar, o alvo não pode escolher evitá-lo. Além disso, se derrubar um oponente, pode fazer um ataque imediato contra ele como uma ação livre (recebendo o bônus de +4 em jogadas de ataque contra oponentes caídos)."
+		},
+		"Rapidez de Recarga": {
+			"prerequisitos": ["saber usar a arma escolhida"],
+			"desc": "Você sabe recarregar suas armas muito rapidamente. Benefício: escolha uma arma de disparo com tempo de recarga (besta leve, besta pesada). A ação necessária para recarregar a arma escolhida diminui em uma categoria — ação completa para padrão, padrão para movimento e movimento para ação livre."
+		},
+		"Reflexos de Combate": {
+			"prerequisitos": ["Des 13"],
+			"desc": "Você consegue reagir rapidamente contra oponentes com a guarda baixa. Benefício: se um oponente desprevenido estiver a seu alcance, você pode fazer um único ataque corpo-a-corpo contra ele como uma ação livre. Custo: 1 PM por uso."
+		},
+		"Saque Rápido": {
+			"prerequisitos": [],
+			"desc": "Você consegue sacar sua arma mais rápido que o normal. Benefício: você pode sacar ou guardar armas como uma ação livre. Além disso, pode fazer um teste de Iniciativa (CD 30) para sacar ou guardar uma arma como uma reação. Custo: 0 PM para sacar ou guardar uma vez, 1 PM para cada novo uso na mesma rodada."
+		},
+		"Separar Aprimorado": {
+			"prerequisitos": ["For 13", "Ataque Poderoso"],
+			"desc": "Você sabe atingir a arma do oponente, ou outro objeto que ele esteja carregando. Benefício: +4 em jogadas de ataque para separar. Além disso, você causa dano dobrado contra objetos."
+		},
+		"Tiro Certeiro": {
+			"prerequisitos": [],
+			"desc": "Você é capaz de disparos precisos contra alvos próximos. Benefício: você recebe +1 em jogadas de ataque e dano com armas de ataque à distância contra alvos que estejam a até 9m."
+		},
+		"Tiro em Movimento": {
+			"prerequisitos": [
+				"Des 13",
+				"Esquiva",
+				"Mobilidade",
+				"Tiro Certeiro",
+				"bônus base de ataque +4"
+			],
+			"desc": "Você faz disparos rápidos e se movimenta com agilidade. Benefício: quando estiver atacando à distância, você pode se mover antes e depois do ataque, desde que a distância total percorrida não seja maior que seu deslocamento. Você não pode usar este talento se estiver de armadura pesada. Normal: você pode se mover antes ou depois de um ataque, mas não ambos."
+		},
+		"Tiro Longo": {
+			"prerequisitos": ["Tiro Certeiro"],
+			"desc": "Seus disparos vão muito mais longe. Benefício: a distância de qualquer arma de ataque à distância que você utilizar é dobrada."
+		},
+		"Tiro Montado": {
+			"prerequisitos": ["Combate Montado"],
+			"desc": "Você é talentoso em atacar à distância enquanto cavalga. Benefício: a penalidade para ataques à distância quando sua montaria se movimenta é reduzida para –2. Normal: um personagem sofre –4 em ataques à distância se sua montaria se movimentou na mesma rodada."
+		},
+		"Tiro Múltiplo": {
+			"prerequisitos": [
+				"Des 17",
+				"Tiro Certeiro",
+				"Tiro Rápido",
+				"bônus base de ataque +6"
+			],
+			"desc": "Você atira mais em menos tempo. Benefício: se estiver usando uma arma de disparo e fizer a ação padrão atacar contra um alvo a até 9m, você pode fazer um ataque adicional contra ele. Custo: 2 PM."
+		},
+		"Tiro Preciso": {
+			"prerequisitos": ["Tiro Certeiro"],
+			"desc": "Você é capaz de mirar e disparar no momento certo. Benefício: você pode fazer ataques à distância contra oponentes envolvidos em combate corpo-a-corpo sem sofrer a penalidade padrão de –4 na jogada de ataque. Normal: um personagem sem este talento sofre uma penalidade de –4 em ataques à distância contra oponentes envolvidos em combate corpo-a-corpo."
+		},
+		"Tiro Preciso Aprimorado": {
+			"prerequisitos": [
+				"Des 19",
+				"Tiro Certeiro",
+				"Tiro Preciso",
+				"bônus base de ataque +11"
+			],
+			"desc": "Sua mira é infalível. Benefício: seus ataques à distância ignoram cobertura e camuflagem (exceto cobertura ou camuflagem totais). Além disso, quando ataca um alvo envolvido na manobra agarrar, você acerta automaticamente o alvo que escolheu. Normal: um personagem atacando um alvo envolvido na manobra agarrar deve determinar aleatoriamente qual alvo ele acerta."
+		},
+		"Tiro Rápido": {
+			"prerequisitos": ["Des 13", "Tiro Certeiro"],
+			"desc": "Você é muito rápido atacando à distância. Benefício: se estiver usando uma arma de ataque à distância e gastar uma ação completa para atacar, você pode fazer um ataque adicional. Custo: 2 PM."
+		},
+		"Trespassar": {
+			"prerequisitos": ["For 13", "Ataque Poderoso"],
+			"desc": "Quando você derruba um inimigo, pode continuar o golpe e acertar outro alvo. Benefício: quando você derruba um inimigo com um ataque corpo-a-corpo, reduzindo seus PV para 0 ou menos, pode realizar um ataque adicional como uma ação livre contra outra criatura dentro do seu alcance. O ataque adicional usa os bônus de ataque e dano do primeiro, mas os dados devem ser rolados novamente. Custo: 1 PM por uso."
+		},
+		"Trespassar Aprimorado": {
+			"prerequisitos": [
+				"For 13",
+				"Ataque Poderoso",
+				"Trespassar",
+				"bônus base de ataque +4"
+			],
+			"desc": "Você empunha suas armas com tanta força que seus golpes o carregam adiante. Benefício: quando usa o talento Trespassar, você pode se deslocar 1,5m antes de realizar seu ataque adicional. Custo: 1 PM por uso (mas você ainda precisa pagar o custo de Trespassar — ou seja, para se deslocar e fazer um novo ataque, o custo total é 2 PM)."
+		},
+		"Usar Arma Exótica": {
+			"prerequisitos": ["Usar Armas Simples"],
+			"desc": "Você foi treinado para usar uma arma exótica, como nunchaku ou zanbatou. Benefício: escolha uma arma exótica. Você sabe usar a arma escolhida. Normal: um personagem atacando com uma arma que não saiba usar sofre penalidade de –4 em jogadas de ataque."
+		},
+		"Usar Armas Marciais": {
+			"prerequisitos": ["Usar Armas Simples"],
+			"desc": "Você foi treinado para usar armas marciais, como katana e wakizashi. Benefício: você sabe usar todas as armas marciais. Normal: um personagem atacando com uma arma que não saiba usar sofre penalidade de –4 em jogadas de ataque."
+		},
+		"Usar Armas Simples": {
+			"prerequisitos": [],
+			"desc": "Você foi treinado para usar armas simples, como kunai e yari. Benefício: você sabe usar todas as armas simples."
+		},
+		"Usar Armaduras Leves": {
+			"prerequisitos": [],
+			"desc": "Você foi treinado para usar armaduras leves. Benefício: você sabe usar corselete de couro, armadura de ossos, armadura ashigaru, char-aina e outras armaduras leves. Normal: um personagem vestindo uma armadura que não saiba usar aplica sua penalidade de armadura em jogadas de ataque e testes de perícias baseadas em Força e Destreza, e deve fazer testes de Identificar Magia com a mesma penalidade para executar jutsus."
+		},
+		"Usar Armaduras Médias": {
+			"prerequisitos": ["Usar Armaduras Leves"],
+			"desc": "Você foi treinado para usar armaduras médias. Benefício: você sabe usar haramaki, lamellar, suchiiru e outras armaduras médias. Normal: um personagem vestindo uma armadura que não saiba usar aplica sua penalidade de armadura em jogadas de ataque e testes de perícias baseadas em Força e Destreza, e deve fazer testes de Identificar Magia com a mesma penalidade para executar jutsus."
+		},
+		"Usar Armaduras Pesadas": {
+			"prerequisitos": ["Usar Armaduras Médias"],
+			"desc": "Você foi treinado para usar armaduras pesadas. Benefício: você sabe usar carapaça kappa, yoroi, o-yoroi e outras armaduras pesadas. Normal: um personagem vestindo uma armadura que não saiba usar aplica sua penalidade de armadura em jogadas de ataque e testes de perícias baseadas em Força e Destreza, e deve fazer testes de Identificar Magia com a mesma penalidade para executar jutsus."
+		},
+		"Usar Escudos": {
+			"prerequisitos": [],
+			"desc": "Você sabe lutar com escudos. Benefício: você sabe usar escudos leves e pesados. Normal: um personagem com um escudo que não saiba usar aplica sua penalidade de armadura em jogadas de ataque e testes de perícias baseadas em Força e Destreza, e deve fazer testes de Identificar Magia com a mesma penalidade para executar jutsus."
+		},
+		"Usar Venenos": {
+			"prerequisitos": [],
+			"desc": "Você faz o que muitos consideram desleal: usar venenos para deixar suas armas mais perigosas. Benefício: você pode aplicar veneno em armas sem risco de se envenenar acidentalmente. Normal: um personagem sem este talento que aplique veneno em uma arma tem 10% de chance de se expor acidentalmente ao veneno. Especial: adquirir este talento é uma violação de honra severa."
+		},
+		"Vitalidade": {
+			"prerequisitos": [],
+			"desc": "Você suporta mais ferimentos que outras pessoas. Benefício: você recebe 1 ponto de vida adicional por nível de personagem. Quando sobe de nível, os PV que recebe por este talento aumentam de acordo. Especial: você pode escolher este talento diversas vezes. Seus efeitos se acumulam."
+		}
+	},
+	"pericia": {
+		"Acrobacia Audaz": {
+			"prerequisitos": ["treinado em Acrobacia"],
+			"desc": "Você consegue desviar de obstáculos dando saltos, piruetas e parecendo pisar sempre no lugar certo. Benefício: você pode atravessar terrenos difíceis sem sofrer redução em seu deslocamento. Você pode realizar investidas mesmo nessas condições. Normal: um personagem em terreno difícil tem seu deslocamento reduzido à metade, e não pode realizar investidas."
+		},
+		"Autossuficiente": {
+			"prerequisitos": [],
+			"desc": "Você se vira bem sozinho. Benefício: você não sofre a penalidade de –5 para fazer testes de Cura em si mesmo, e recebe +4 em testes de perícia se estiver sozinho (sem nenhum companheiro a até 30m)."
+		},
+		"Cauda Ágil": {
+			"prerequisitos": ["vanara"],
+			"desc": "Você usa a cauda para manobras acrobáticas e façanhas de agilidade. Benefício: você recebe +2 em testes de Acrobacia, Atletismo e Ladinagem (apenas para prestidigitação)."
+		},
+		"Cauda Hipnótica": {
+			"prerequisitos": ["vanara"],
+			"desc": "Você distrai os outros com o movimento de sua cauda. Benefício: você recebe +2 em testes de Atuação, Diplomacia e Enganação (apenas para blefar)."
+		},
+		"Criar Obra-Prima": {
+			"prerequisitos": ["treinado em Ofício", "Foco em Perícia (Ofício)"],
+			"desc": "Você é um artesão competente e pode criar itens de qualidade excepcional. Benefício: você pode construir itens de qualidade obra-prima. Siga as regras normais para criação de itens, exceto que a CD do teste de Ofício aumenta em +5, e o custo do item aumenta em +17 Yo (kits) ou +100 Yo (armas e armaduras)."
+		},
+		"Diligente": {
+			"prerequisitos": [],
+			"desc": "Você é paciente e detalhista. Benefício: você pode gastar uma ação de movimento para se concentrar na tarefa à frente. Se fizer isso, recebe +2 no próximo teste de perícia que realizar."
+		},
+		"Dissimular Honra": {
+			"prerequisitos": ["treinado em Enganação"],
+			"desc": "Você sabe esconder sua vergonha. Benefício: você recebe +10 em testes de Enganação para dissimular honra."
+		},
+		"Foco em Perícia": {
+			"prerequisitos": ["treinado na perícia escolhida"],
+			"desc": "Você tem certo dom com uma perícia. Benefício: escolha uma perícia. Você recebe +4 em testes da perícia escolhida."
+		},
+		"Investigador": {
+			"prerequisitos": ["Int 13"],
+			"desc": "Você é um bom detetive. Benefício: você pode somar seu bônus de Inteligência a testes de Obter Informação e Percepção."
+		},
+		"Memória Eidética": {
+			"prerequisitos": [],
+			"desc": "Você sempre se lembra do que leu ou estudou. Benefício: você pode memorizar uma longa sequência de números, uma grande passagem de versos ou outro conjunto de informações complexo (mas nunca escritas mágicas ou similares). Como uma ação completa, você retém uma página de informação. A informação memorizada é permanente, mas só pode ser acessada com um teste bem-sucedido de Inteligência (CD 15)."
+		},
+		"Mãos Rápidas": {
+			"prerequisitos": ["Des 15", "treinado em Ladinagem"],
+			"desc": "Quando os outros percebem, já foram roubados. Benefício: você pode fazer um teste de Ladinagem para prestidigitação como uma ação livre. Custo: 0 PM para uma vez, 1 PM para cada novo uso na mesma rodada."
+		},
+		"Obra de Arte": {
+			"prerequisitos": ["mashin", "Car 13"],
+			"desc": "Todos os mashin são maravilhas da arte tamuraniana, mas você é ainda mais magnífico. Nenhuma criatura inteligente deixa de admirar-se com sua beleza. Benefício: você recebe +2 em testes de Atuação, Diplomacia e Obter Informação."
+		},
+		"Perícia Aprimorada": {
+			"prerequisitos": [],
+			"desc": "Você é rápido em corrigir seus erros. Benefício: escolha uma perícia treinada. Você pode rolar outra vez um teste da perícia escolhida que tenha recém realizado. Você deve aceitar a segunda rolagem, mesmo sendo pior que a primeira."
+		},
+		"Rastrear": {
+			"prerequisitos": ["treinado em Sobrevivência"],
+			"desc": "Você recebeu treinamento para seguir rastros. Benefício: você recebe um bônus de +4 em testes de Sobrevivência para rastrear. Além disso, quando rastreia, seu deslocamento não é reduzido pela metade."
+		},
+		"Treino em Perícia": {
+			"prerequisitos": [],
+			"desc": "Você se dedicou a aprender uma nova perícia. Benefício: escolha uma perícia na qual você não seja treinado. Você se torna treinado na perícia escolhida. Especial: tornar-se treinado em uma perícia que não seja de classe é uma violação de honra leve. Tornar-se treinado em Enganação ou Furtividade é uma violação de honra moderada. Tornar-se treinado em Ladinagem é uma violação de honra severa."
+		},
+		"Violência Velada": {
+			"prerequisitos": ["For 15"],
+			"desc": "Você usa sua força (e a ameaça dela) para intimidar seus inimigos. Benefício: você pode usar seu modificador de Força em vez de Carisma em testes de Intimidação."
+		},
+		"Ágil": {
+			"prerequisitos": ["Des 15"],
+			"desc": "Você pode usar sua agilidade para proezas atléticas. Benefício: você pode usar seu modificador de Destreza em vez de Força em testes de Atletismo."
+		}
+	},
+	"destino": {
+		"Ajuda dos Ancestrais": {
+			"prerequisitos": ["Sab 13", "Hon 10"],
+			"desc": "Você pode orar aos espíritos de seus ancestrais e perguntar a eles sobre seu destino. Benefício: ao usar a Honra como reserva de força, você pode executar o jutsu conselhos dos ancestrais sem gastar pontos de magia. É possível incluir aprimoramentos, desde que pagando seu custo e respeitando o limite."
+		},
+		"Animal Falante": {
+			"prerequisitos": ["henge"],
+			"desc": "Você pode encantar crianças e dar bons sustos em adultos. Benefício: você pode falar e executar jutsus mesmo quando em forma animal."
+		},
+		"Camuflagem": {
+			"prerequisitos": ["mashin", "personagem 3º nível"],
+			"desc": "Seu revestimento externo pode mudar de cor para combinar com o ambiente. Benefício: você aprende e pode executar o jutsu invisibilidade ninja, mesmo que não tenha chacras abertos."
+		},
+		"Comandar": {
+			"prerequisitos": ["Car 13"],
+			"desc": "Você sabe como liderar outros em batalha. Benefício: você pode gastar uma ação de movimento e 1 PM para gritar ordens para seus nakama. Aqueles que puderem ouvi-lo recebem +1 em suas jogadas de ataque e testes pela duração da cena."
+		},
+		"Companheiro Animal": {
+			"prerequisitos": ["treinado em Adestrar Animais", "Car 13"],
+			"desc": "Você tem um animal valoroso e leal, que o acompanha por toda parte. Benefício: você tem um animal treinado que funciona como um aliado iniciante, escolhido entre lutador, guardião, montaria ou perseguidor. Conforme você avança de nível, o companheiro animal também avança como aliado. Se o companheiro animal morre, você fica atordoado por 1d4 rodadas. Nesse caso, você pode fazer amizade com um novo animal após 1d4 dias."
+		},
+		"Coração Gelado": {
+			"prerequisitos": ["hanyô"],
+			"desc": "Você se fechou aos sentimentos, descobrindo outros caminhos para seus dons mágicos naturais. Benefício: você fecha seu chacra das emoções; nunca poderá abri-lo, seja com talentos, habilidades de classe e afins. Em compensação, pode escolher outra habilidade para receber os benefícios da habilidade de raça brincar com os sentimentos (exceto Honra). Especial: este talento só pode ser escolhido no 1º nível de personagem."
+		},
+		"Corrida": {
+			"prerequisitos": [],
+			"desc": "Você corre. Rápido. Benefício: seu deslocamento aumenta em +3m."
+		},
+		"Cura Elemental Adicional": {
+			"prerequisitos": ["mashin", "personagem 5º nível"],
+			"desc": "Você é imune a mais uma energia e também cura-se quando ela é mágica. Benefício: escolha um descritor elemental entre ácido, eletricidade, fogo, frio ou vento que ainda não tenha sido escolhido para cura elemental. Este descritor passa a ser beneficiado por essa habilidade de raça. Especial: você pode escolher este talento mais vezes, uma vez para cada descritor. Cada vez que escolher além da primeira, o nível do pré-requisito aumenta em +4."
+		},
+		"Dignidade de Aço": {
+			"prerequisitos": ["ryuujin"],
+			"desc": "Mesmo em situações de embaraço, você ainda consegue manter a pose. Benefício: ao cometer uma violação de honra leve, faça um teste de Diplomacia (CD 15) como reação. Em caso de sucesso, você não sofre dano de Honra. Especial: este talento não afeta dano de Honra durante a criação do personagem."
+		},
+		"Fortitude Maior": {
+			"prerequisitos": [],
+			"desc": "Você tem mais resistência física que as pessoas normais. Benefício: você recebe um bônus de +2 em testes de Fortitude. Especial: você pode escolher este talento diversas vezes. Seus efeitos se acumulam."
+		},
+		"Gerador Arcano": {
+			"prerequisitos": ["mashin"],
+			"desc": "Seu corpo contém cristais que produzem energia mágica adicional. Benefício: uma vez por dia, você pode gastar uma ação completa para entrar em transe e recuperar 1 PM por nível de personagem. Você pode ver e ouvir normalmente durante o transe, mas não pode falar ou mover-se. Se sofrer qualquer distração, deve ser bem-sucedido em um teste de Vontade (CD 20) para evitar que o transe seja interrompido."
+		},
+		"Leveza Celestial": {
+			"prerequisitos": ["ryuujin"],
+			"desc": "Como os dragões, você desliza com graça entre as nuvens. Benefício: você recebe +4 em testes de Atletismo para saltar, não sofre dano por quedas (independentemente da altura) e sempre cai em pé."
+		},
+		"Liderança": {
+			"prerequisitos": ["personagem 5º nível", "Car 11"],
+			"desc": "Por suas façanhas, você atraiu uma ou mais pessoas que desejam lhe servir. Benefício: escolha entre parceiro ou seguidores. Parceiro: aliado iniciante que avança com você. Seguidores: você tem autoridade sobre pessoas que realizam tarefas simples (CD = seu nível) ou difíceis (CD = nível + 5) gastando PM. Especial: você pode escolher este talento duas vezes, uma para parceiro e uma para seguidores."
+		},
+		"Linguista": {
+			"prerequisitos": [],
+			"desc": "Neste mundo de muitas línguas e culturas, você tem aptidão para aprender idiomas de outros povos. Benefício: você aprende um número de novos idiomas igual a 3 + seu bônus de Inteligência (mínimo 1). Especial: você pode escolher este talento diversas vezes. Seus efeitos se acumulam."
+		},
+		"Mudança Rápida": {
+			"prerequisitos": ["henge"],
+			"desc": "Você pode mudar de forma mais rapidamente. Benefício: você pode mudar de forma como uma ação de movimento. Normal: mudar de forma exige uma ação completa."
+		},
+		"Nekomimi": {
+			"prerequisitos": ["henge", "Car 13"],
+			"desc": "Você pode mudar para uma forma mais humana. Benefício: além de sua forma animal e sua forma híbrida, você tem uma terceira forma, mais parecida com seres humanos. Esta forma tem as mesmas estatísticas da forma híbrida, mas sua aparência inclui apenas traços animais cosméticos. Na forma nekomimi, testes de Enganação para disfarce não sofrem penalidade por raça diferente e você recebe +4 em testes de Diplomacia e Enganação contra qualquer um que possa se sentir fisicamente atraído por você. Especial: um hanyô pode escolher este talento sem cumprir seus pré-requisitos, mas recebe apenas os bônus em Diplomacia e Enganação."
+		},
+		"Reconfiguração": {
+			"prerequisitos": ["mashin"],
+			"desc": "Você pode se adaptar a novas situações, mudando para uma forma com poderes diferentes. Benefício: como uma ação completa, você pode trocar um talento por outro do mesmo grupo, mas ainda deve cumprir seus pré-requisitos. Você não pode trocar este talento, nem talentos bônus. Custo: 1 PM para o primeiro uso, +1 PM por uso adicional no mesmo dia, cumulativo."
+		},
+		"Reflexos Rápidos": {
+			"prerequisitos": [],
+			"desc": "Você tem reflexos apurados. Benefício: você recebe um bônus de +2 em testes de Reflexos. Especial: você pode escolher este talento diversas vezes. Seus efeitos se acumulam."
+		},
+		"Terreno Familiar": {
+			"prerequisitos": [],
+			"desc": "Você é mais habilidoso em um lugar ou tipo de terreno específico. Benefício: escolha um terreno entre planície, floresta, montanha, pântano, glacial, aquático ou subterrâneo. Você recebe +2 na classe de armadura e em testes de perícia quando estiver no tipo de terreno escolhido. Especial: de acordo com o mestre, você também pode escolher um lugar específico como seu terreno familiar, como um vale, uma cidade, uma estrada, um navio..."
+		},
+		"Tolerância": {
+			"prerequisitos": [],
+			"desc": "Você segue em frente mesmo quando os outros já cansaram ou caíram. Benefício: você recebe +4 em testes para continuar correndo, prender o fôlego, evitar dano por fome ou sede e evitar dano por calor e frio. Você também pode dormir de armadura sem ficar fatigado. Normal: um personagem sem este talento que durma de armadura acorda fatigado no dia seguinte."
+		},
+		"Ver a Vergonha": {
+			"prerequisitos": ["ryuujin", "Hon 16", "personagem 3º nível"],
+			"desc": "Você enxerga a escuridão da desonra. Benefício: como uma ação padrão, você passa a ignorar os benefícios de Furtividade, camuflagem e invisibilidade de alvos desonrados (Honra 9 ou menos) pela cena. Custo: 3 PM."
+		},
+		"Visão Térmica": {
+			"prerequisitos": ["visão no escuro"],
+			"desc": "Você enxerga o calor. Benefício: no escuro, você pode distinguir extremos de temperatura — alaranjado brilhante para calor, azul para frio. Itens em temperatura ambiente aparecem em preto e branco, como na visão no escuro normal. Graças a isso você enxerga normalmente criaturas vivas invisíveis e recebe +8 em testes de Percepção para observar criaturas vivas no escuro. Não se aplica a shiryou, construtos, criaturas incorpóreas, de sangue frio e outras a critério do mestre."
+		},
+		"Vontade de Ferro": {
+			"prerequisitos": [],
+			"desc": "Você tem uma imensa força de vontade. Benefício: seu bônus de Vontade aumenta em +2. Especial: você pode escolher este talento diversas vezes. Seus efeitos se acumulam."
+		}
+	},
+	"jutsu": {
+		"Abrir Chacra": {
+			"prerequisitos": [
+				"personagem de 3º nível",
+				"habilidade escolhida 11"
+			],
+			"desc": "Você pode sentir e manipular a energia cósmica. Benefício: escolha uma de suas habilidades básicas, exceto Honra. Você abre o chacra correspondente, somando o bônus da habilidade escolhida a seu total de pontos de magia e seu limite de PM, e pode aprender e executar jutsus básicos deste chacra. Além disso, você aprende um jutsu de grau básico da habilidade escolhida."
+		},
+		"Chacra Avançado": {
+			"prerequisitos": [
+				"personagem de 11º nível",
+				"habilidade do chacra escolhido 16"
+			],
+			"desc": "Você aprende a usar a energia cósmica de maneiras mais impressionantes. Benefício: escolha um chacra já aberto em grau mediano. Você pode aprender e executar jutsus avançados deste chacra. Além disso, você aprende um jutsu avançado do chacra escolhido."
+		},
+		"Chacra Lendário": {
+			"prerequisitos": [
+				"personagem de 19º nível",
+				"habilidade do chacra escolhido 22"
+			],
+			"desc": "Seu controle sobre a energia cósmica é digno das lendas de Tamu-ra. Benefício: escolha um chacra já aberto em grau sublime. Você pode aprender e executar jutsus lendários deste chacra. Além disso, você aprende um jutsu lendário do chacra escolhido."
+		},
+		"Chacra Mediano": {
+			"prerequisitos": [
+				"personagem de 7º nível",
+				"habilidade do chacra escolhido 13"
+			],
+			"desc": "Seu controle sobre a energia cósmica aumenta. Benefício: escolha um chacra já aberto. Você pode aprender e executar jutsus medianos deste chacra. Além disso, você aprende um jutsu mediano do chacra escolhido."
+		},
+		"Chacra Sublime": {
+			"prerequisitos": [
+				"personagem de 15º nível",
+				"habilidade do chacra escolhido 19"
+			],
+			"desc": "Poucos se igualam a seu grau de controle sobre a energia cósmica. Benefício: escolha um chacra já aberto em grau avançado. Você pode aprender e executar jutsus sublimes deste chacra. Além disso, você aprende um jutsu sublime do chacra escolhido."
+		},
+		"Concentração Mística": {
+			"prerequisitos": ["hanyô ou vanara"],
+			"desc": "Não é fácil impedir você de executar jutsus. Benefício: você recebe +4 em testes de Vontade para executar jutsus em condições difíceis, e não fica desprevenido ao executar jutsus com tempo de execução de uma ação completa ou maior. Normal: você fica desprevenido ao executar jutsus com tempo de execução de uma ação completa ou maior."
+		},
+		"Conhecimento de Jutsu": {
+			"prerequisitos": [],
+			"desc": "Você estudou para aumentar seu repertório de jutsus. Benefício: você aprende dois jutsus de qualquer chacra e grau que possa executar. Especial: você pode escolher este talento diversas vezes. Cada vez, você aprende dois novos jutsus."
+		},
+		"Devoto da Família Celestial": {
+			"prerequisitos": ["Sab 11"],
+			"desc": "Você é devotado aos dezenove irmãos deuses de Lin-Wu. Benefício: você abre seu chacra do espírito, somando seu bônus de Sabedoria a seu total de pontos de magia e limite de PM. Além disso, você pode aprender jutsus básicos de Sabedoria e adquirir talentos de poder concedido da Família Celestial."
+		},
+		"Devoto de Lin-Wu": {
+			"prerequisitos": ["Sab 11", "Hon 11"],
+			"desc": "Você é devotado ao Deus Dragão de Tamu-ra. Benefício: você abre seu chacra do espírito, somando seu bônus de Sabedoria a seu total de pontos de magia e limite de PM. Além disso, você pode aprender jutsus básicos de Sabedoria e adquirir talentos de poder concedido de Lin-Wu. Especial: você pode aprender qualquer jutsu com 'Lin-Wu' no nome, desde que possa executar jutsus de mesmo grau, não importando quais chacras tenha aberto. Aprender esses jutsus não resulta em violação de honra."
+		},
+		"Devoto do Bushintau": {
+			"prerequisitos": ["Sab 11"],
+			"desc": "Você é devotado aos infinitos espíritos do universo. Benefício: você abre seu chacra do espírito, somando seu bônus de Sabedoria a seu total de pontos de magia e limite de PM. Além disso, você pode aprender jutsus básicos de Sabedoria e adquirir talentos de poder concedido do Bushintau."
+		},
+		"Dominar Jutsu": {
+			"prerequisitos": [],
+			"desc": "Você tem mais familiaridade com um jutsu específico. Benefício: escolha um jutsu. O custo em PM para executar o jutsu escolhido diminui um grau. Um jutsu lendário passa a custar 10 PM, por exemplo. Um jutsu básico passa a custar 0 PM, mas sempre deve incluir aprimoramentos para um custo final mínimo 1 PM."
+		},
+		"Jutsu Acelerado": {
+			"prerequisitos": [],
+			"desc": "Você pode executar jutsus mais rapidamente. Benefício: reduz o tempo de execução do jutsu em um passo; ação completa muda para ação padrão, ação padrão para ação de movimento, ação de movimento para ação livre. Jutsus com tempo de execução diferente não são afetados. Custo: +3 PM para um passo, +6 PM para dois passos, +9 PM para três passos."
+		},
+		"Jutsu Ampliado": {
+			"prerequisitos": [],
+			"desc": "Você pode fazer com que um jutsu afete uma área maior. Benefício: aumenta em +100% a área ou efeito de área do jutsu. Jutsus sem área de efeito não são afetados. Custo: +6 PM, cumulativo."
+		},
+		"Jutsu Compartilhado": {
+			"prerequisitos": [],
+			"desc": "Você pode compartilhar um jutsu pessoal com um nakama. Benefício: muda um jutsu com alcance pessoal e alvo você para alcance corpo-a-corpo e alvo 1 criatura. Se a criatura não for voluntária, você deve acertá-la com um ataque de toque. Custo: +2 PM."
+		},
+		"Jutsu Distante": {
+			"prerequisitos": [],
+			"desc": "Você pode aumentar o alcance de um jutsu. Benefício: aumenta o alcance do jutsu em +100%. Jutsus com alcance diferente de curto ou longo não são afetados. Custo: +2 PM, cumulativo."
+		},
+		"Jutsu Estendido": {
+			"prerequisitos": [],
+			"desc": "Você sabe fazer um jutsu durar mais tempo. Benefício: aumenta a duração de um jutsu e/ou efeito medido em rodadas em +100%. Jutsus sem duração medida em rodadas não são afetados. Custo: +2 PM, cumulativo."
+		},
+		"Jutsu Irresistível": {
+			"prerequisitos": [],
+			"desc": "É difícil resistir a seus jutsus. Benefício: aumenta a dificuldade do teste de resistência em CD+1. Também inclui a CD de outros efeitos do jutsu. Custo: +2 PM, cumulativo."
+		},
+		"Jutsu Longínquo": {
+			"prerequisitos": [],
+			"desc": "Você pode disparar seus jutsus de toque. Benefício: muda um jutsu com alcance corpo-a-corpo para alcance curto, ganhando um efeito de raio. Custo: +1 PM."
+		},
+		"Jutsu Maximizado": {
+			"prerequisitos": [],
+			"desc": "Você consegue fazer com que seus jutsus tenham efeito máximo. Benefício: muda todos os efeitos variáveis de dano ou cura do jutsu, aumentando-os ao máximo. Jutsus sem efeitos variáveis não são afetados. Custo: +6 PM."
+		},
+		"Jutsu sem Mantras": {
+			"prerequisitos": [],
+			"desc": "Você consegue executar seus jutsus sem dizer as palavras mágicas conhecidas como mantras. Benefício: você pode executar o jutsu sem entoar mantras — ou seja, mesmo amordaçado ou silenciado magicamente. Custo: +1 PM."
+		},
+		"Jutsu sem Selos": {
+			"prerequisitos": [],
+			"desc": "Você consegue executar seus jutsus sem os movimentos com mãos ou armas conhecidos como selos. Benefício: você pode executar o jutsu sem fazer selos — ou seja, mesmo que esteja paralisado ou com as mãos amarradas. Custo: +1 PM."
+		},
+		"Poder Mágico": {
+			"prerequisitos": ["personagem de 2º nível"],
+			"desc": "Você tem uma parcela maior de poder mágico. Benefício: você recebe 1 ponto de magia adicional para cada 2 níveis de personagem. Quando sobe de nível, os PM que recebe por este talento aumentam de acordo. Especial: você pode escolher este talento diversas vezes. Seus efeitos se acumulam."
+		},
+		"Wu-jen de Batalha": {
+			"prerequisitos": ["Int 13", "wu-jen 4º nível"],
+			"desc": "Você se especializou em jutsus de combate e sabe como aumentar o poder deles. Benefício: você soma seu modificador de Inteligência ao dano de seus jutsus. Especial: no caso de jutsus que causam dano por rodada, o bônus é aplicado apenas na primeira rodada. Em jutsus que causam múltiplos efeitos de dano, o bônus pode ser dividido igualmente entre os efeitos ou aplicado inteiramente a uma única fonte."
+		}
+	},
+	"tormenta": {
+		"Anatomia Insana": {
+			"prerequisitos": [],
+			"desc": "Seus órgãos vitais não ficam exatamente onde deveriam, sendo difícil atingi-lo em um ponto vital. Benefício: você tem 25% de chance de ignorar o dano adicional de um acerto crítico ou ataque furtivo. A chance aumenta em +25% para cada dois outros talentos da Tormenta que você possui. Especial: este efeito é cumulativo com outros que protegem contra acertos críticos."
+		},
+		"Armamento da Tormenta": {
+			"prerequisitos": [],
+			"desc": "Seu corpo pode produzir armas orgânicas macabras. Benefício: com uma ação de movimento, você pode expelir uma arma de akamono que saiba usar. Ao fazer isso, sofre 1d6 pontos de dano. Você pode produzir armas de corpo-a-corpo ou arremesso. A arma dura pela cena. O dano da arma aumenta em +1 para cada dois outros talentos da Tormenta que você possui."
+		},
+		"Asas Insetoides": {
+			"prerequisitos": ["três outros talentos da Tormenta"],
+			"desc": "Você tem asas insetoides e pode voar por curtos períodos. Benefício: você recebe 1,5m de deslocamento de voo para cada talento da Tormenta que possui. Custo: 1 PM por rodada de voo."
+		},
+		"Braço Armado": {
+			"prerequisitos": [],
+			"desc": "Você tem uma arma terrível no lugar da mão. Benefício: sua mão é uma arma natural, cujo dano aumenta em +1 para cada dois outros talentos da Tormenta que você possui. Opções: clava (1d8, crítico x2), ferão (1d6, crítico 18), garra (1d8, crítico x3), pinça (1d6, crítico x2, +2 em agarrar/separar), tentáculo (1d4, crítico x2, alcance 4,5m, +2 em agarrar/derrubar/desarmar). Você não pode segurar itens com a mão afetada. Especial: você pode escolher este talento uma vez para cada mão."
+		},
+		"Carapaça": {
+			"prerequisitos": [],
+			"desc": "Sua pele foi desfigurada pela Tormenta, adquirindo grande resistência a golpes. Benefício: você recebe CA+1. Este bônus aumenta em +1 para cada dois outros talentos da Tormenta que você possui."
+		},
+		"Corpo Aberrante": {
+			"prerequisitos": ["outro talento da Tormenta"],
+			"desc": "Sua carne foi mesclada ao akamono, recebendo uma resistência impressionante. Benefício: você recebe redução de dano 2. Esta RD aumenta em +1 para cada dois outros talentos da Tormenta que você possui."
+		},
+		"Golpes da Tempestade": {
+			"prerequisitos": ["dois outros talentos da Tormenta"],
+			"desc": "Crostas vermelhas em várias partes de seu corpo tornam seus ataques mais perigosos. Benefício: você recebe +1 no dano de seus ataques desarmados ou armas naturais. Esse bônus aumenta em +1 para cada dois outros talentos da Tormenta que você possui."
+		},
+		"Manto Mucoso": {
+			"prerequisitos": [],
+			"desc": "Uma camada de muco oleoso e escorregadio reveste seu corpo. Benefício: você tem resistência a ácido igual ao número de talentos da Tormenta que possui. Além disso, recebe esse mesmo valor como bônus em testes de Reflexos para evitar ataques de toque; e em testes para evitar manobras de agarrar."
+		},
+		"Membros Estendidos": {
+			"prerequisitos": [],
+			"desc": "Seus braços são longos e deformados. Benefício: o alcance de seus ataques corpo-a-corpo aumenta em 1,5m (se você for uma criatura Média, por exemplo, seu alcance natural passa para 3m)."
+		},
+		"Patas Articuladas": {
+			"prerequisitos": [],
+			"desc": "Além de seus braços e pernas normais, você tem um grande par de patas insetoides extras. Benefício: você recebe +4 em testes de Atletismo para escalar e +1 em jogadas de ataque para manobras de combate. Esses bônus aumentam em +1 para cada dois outros talentos da Tormenta que você possui."
+		},
+		"Recuperação Aberrante": {
+			"prerequisitos": [],
+			"desc": "Você é cada vez menos afetado por efeitos perniciosos deste mundo, recobrando-se mais rápido. Benefício: sempre que você é afetado por um efeito prejudicial com duração medida em rodadas ou em cena, reduza a duração do efeito para 1d4 rodadas, menos 1 rodada para cada dois outros talentos da Tormenta que você possui. Se isso reduzir a duração a 0 rodadas, você não é afetado."
+		},
+		"Resistência Aberrante": {
+			"prerequisitos": [],
+			"desc": "Assim como os akumushi, você é resistente às energias naturais de nosso mundo. Benefício: escolha um descritor entre ácido, eletricidade, fogo, frio, luz, trevas e vento. Você recebe resistência 2 contra o descritor escolhido. Essa resistência aumenta em 2 para cada outro talento da Tormenta que você possui. Especial: você pode escolher este talento várias vezes, cada vez para um descritor diferente."
+		},
+		"Sangue Ácido": {
+			"prerequisitos": [],
+			"desc": "Quem faz você sangrar também se machuca. Benefício: quando você sofre dano por um ataque corpo-a-corpo, o atacante sofre 1d4 pontos de dano de ácido. Esse dano aumenta em +1 para cada dois outros talentos da Tormenta que você possui."
+		},
+		"Sentido Sísmico": {
+			"prerequisitos": ["Sab 13"],
+			"desc": "Você pode perceber, por meio de pequenas antenas na fronte, a presença de outras criaturas através de vibrações no solo. Benefício: você percebe a presença, direção e localização de qualquer criatura em movimento que esteja em contato com o chão. Este sentido tem alcance igual a 1,5m para cada talento da Tormenta que você possui."
+		},
+		"Toque da Corrosão": {
+			"prerequisitos": ["Toque da Erosão"],
+			"desc": "Seu toque é ainda mais hostil contra matéria inanimada. Benefício: quando consegue um acerto crítico com um ataque desarmado ou arma natural contra um alvo usando armadura ou escudo, você também danifica essa armadura ou escudo. A peça perde bônus na CA em quantidade igual ao número de talentos da Tormenta que você possui. Se chegar a 0 ou menos, o item é destruído. Este talento não afeta itens mágicos."
+		},
+		"Toque da Destruição": {
+			"prerequisitos": ["Toque da Erosão", "Toque da Corrosão"],
+			"desc": "Se não fosse inanimada, a matéria fugiria de você! Benefício: quando alguém consegue um acerto crítico contra você, qualquer arma mundana de corpo-a-corpo ou arremesso se quebra. Este talento não afeta armas mágicas ou feitas de materiais especiais, mas afeta armas obra-prima."
+		},
+		"Toque da Erosão": {
+			"prerequisitos": [],
+			"desc": "Seu toque é hostil contra matéria inanimada. Benefício: seus ataques desarmados ou com armas naturais ignoram redução de dano de objetos. Este talento não afeta itens mágicos ou feitos de materiais especiais, mas afeta itens obra-prima."
+		},
+		"Visco Rubro": {
+			"prerequisitos": [],
+			"desc": "Suas mãos expelem um líquido escuro e grosso, que queima quando entra em contato com outras substâncias. Benefício: você recebe um bônus de +1 nos ataques corpo-a-corpo. Este bônus aumenta em +1 para cada dois outros talentos da Tormenta que você possui."
+		},
+		"Visão Ampla": {
+			"prerequisitos": ["Sab 13"],
+			"desc": "Você tem olhos maiores e bulbosos, capazes de ver em todas as direções. Benefício: você recebe +4 em testes de Percepção para observar e não pode ser surpreendido."
+		}
+	},
+	"poder_concedido": {
+		"Família Celestial": {
+			"Bênção de Dai'Gun": {
+				"prerequisitos": ["For 13"],
+				"desc": "Você é abençoado por Dai'Gun-sama, o Guerreiro. Benefício: para você, todas as armas marciais são consideradas simples e todas as armas exóticas são consideradas marciais."
+			},
+			"Bênção de Doragami": {
+				"prerequisitos": ["Int 13"],
+				"desc": "Você é abençoado por Doragami-sama, o Bruxo. Benefício: a dificuldade para resistir a seus jutsus de Inteligência aumenta em CD+2."
+			},
+			"Bênção de Fuyuan": {
+				"prerequisitos": ["Sab 13"],
+				"desc": "Você é abençoado por Fuyuan-hime, a Curandeira. Benefício: você soma seu bônus de Sabedoria aos pontos de vida curados por seus jutsus."
+			},
+			"Bênção de Hikari": {
+				"prerequisitos": ["Hon 13"],
+				"desc": "Você é abençoado por Hikari-sama, o Cavaleiro da Luz. Benefício: ao usar a Honra como reserva de força, sua Honra é considerada 4 pontos maior."
+			},
+			"Bênção de Hinotori": {
+				"prerequisitos": [],
+				"desc": "Você é abençoado por Hinotori-sama, o Pássaro de Fogo. Benefício: a dificuldade para resistir a seus jutsus de fogo aumenta em CD+2. Além disso, você pode aprender jutsus de fogo que consiga executar, não importando quais chacras tenha aberto."
+			},
+			"Bênção de Hyaku-nen": {
+				"prerequisitos": ["Hon 13"],
+				"desc": "Você é abençoado por Hyaku-nen, o Imortal. Benefício: caso seja morto por uma criatura com valor de Honra inferior ao seu, você pode escolher voltar à vida em 1d4 dias. No entanto, sempre que isso ocorre, você sofre 1d4 pontos de dano de Honra. Custo: 1 PM."
+			},
+			"Bênção de Kazuko": {
+				"prerequisitos": ["Car 13"],
+				"desc": "Você é abençoado por Kazuko-hime, a Dançarina. Benefício: atacar você quando você não representa perigo ou ameaça é uma violação de honra severa."
+			},
+			"Bênção de Leen": {
+				"prerequisitos": [],
+				"desc": "Você é abençoado por Leen-sama, o Ceifeiro. Benefício: você ganha visão no escuro. Se já possui visão no escuro, recebe os benefícios de visão nas trevas."
+			},
+			"Bênção de Liu-yan": {
+				"prerequisitos": ["Des 13"],
+				"desc": "Você é abençoado por Liu'Yan-sama, o Mentiroso. Benefício: para você, violações de honra por usar ou tornar-se treinado em perícias desonradas causam –1 ponto de dano de Honra (mínimo 0). Especial: este talento não se acumula com outros que reduzem violações de Honra."
+			},
+			"Bênção de Mizuha": {
+				"prerequisitos": ["Car 13"],
+				"desc": "Você é abençoado por Mizuha-hime, a Feiticeira. Benefício: a dificuldade para resistir a seus jutsus de Carisma aumenta em CD+2."
+			}
+		},
+		"Lin-Wu": {
+			"Armadura Honrada": {
+				"prerequisitos": ["Hon 16"],
+				"desc": "A honra o protege contra ferimentos. Benefício: como uma ação livre, você pode somar seu bônus de Honra à sua CA durante uma rodada. Custo: 1 PM."
+			},
+			"Ataque Honrado": {
+				"prerequisitos": ["Hon 16"],
+				"desc": "A honra guia seus golpes. Benefício: como uma ação livre, você pode somar seu bônus de Honra a suas jogadas de ataque durante uma rodada. Custo: 1 PM."
+			},
+			"Coragem Total": {
+				"prerequisitos": ["Hon 16"],
+				"desc": "Você não teme nada. Nem seus inimigos, nem o desconhecido, nem a morte. Benefício: você é imune a medo."
+			},
+			"Dano Honrado": {
+				"prerequisitos": ["Hon 16"],
+				"desc": "A honra fortalece seus ataques. Benefício: como uma ação livre, você pode somar seu bônus de Honra a suas rolagens de dano durante uma rodada. Custo: 1 PM."
+			},
+			"Detectar Desonra": {
+				"prerequisitos": ["Hon 16"],
+				"desc": "Você sente o fedor da desonra. Benefício: com uma ação padrão, você percebe a presença de seres desonrados por perto. Concentrando-se: 1 rodada detecta presença; 2 rodadas detecta quantidade; 3 rodadas sabe localização e nível de desonra. Alcance 9m."
+			},
+			"Detectar Mentiras": {
+				"prerequisitos": ["Hon 16"],
+				"desc": "Você percebe um embuste desonrado de longe. Benefício: você soma o dobro do seu bônus de Honra a testes de Intuição."
+			},
+			"Determinação Honrada": {
+				"prerequisitos": ["Hon 16"],
+				"desc": "A honra o mantém de pé. Benefício: caso seja reduzido a 0 PV ou menos, você pode se manter consciente e agir normalmente. Você ainda deve fazer testes de Constituição para não sangrar e ainda morrerá caso seus PV negativos cheguem à metade de seus PV totais. Custo: 1 PM por rodada."
+			},
+			"Honra Precavida": {
+				"prerequisitos": ["Hon 16"],
+				"desc": "Forças sobrenaturais alertam quando você está prestes a fazer algo desonrado. Benefício: você sempre está ciente de qualquer ação que poderia levar a uma violação de honra, incluindo ações acidentais."
+			},
+			"Jutsu Honrado": {
+				"prerequisitos": ["Hon 16"],
+				"desc": "A honra fortalece seus jutsus. Benefício: você soma seu bônus de Honra à CD para resistir ao jutsu modificado. Isso inclui a CD de outros efeitos do jutsu. Custo: +2 PM."
+			},
+			"Lâmina de Lin-Wu": {
+				"prerequisitos": [],
+				"desc": "A arma sagrada do Deus Samurai é muito familiar a você. Benefício: para você, a katana é considerada uma arma simples e leve. Normal: a katana é uma arma marcial quando usada com as duas mãos e uma arma exótica quando usada com uma única mão."
+			},
+			"Recuperação Honrada": {
+				"prerequisitos": ["Hon 13"],
+				"desc": "A honra ajuda-o a recobrar as forças. Benefício: como uma ação de movimento, você pode recuperar pontos de vida em quantidade igual a seu valor de Honra. Custo: 3 PM."
+			},
+			"Resistência Honrada": {
+				"prerequisitos": ["Hon 13"],
+				"desc": "A honra protege-o contra efeitos nocivos. Benefício: como uma reação, você pode somar seu bônus de Honra a um teste de resistência. Custo: 1 PM."
+			},
+			"Respeito de Lin-Wu": {
+				"prerequisitos": ["Hon 16"],
+				"desc": "Pessoas honradas o admiram; as desonradas o temem. Benefício: você adiciona seu bônus de Honra a testes de Diplomacia com criaturas com Honra 10 ou maior e a testes de Intimidação com criaturas com Honra 9 ou menor."
+			},
+			"Terror de Lin-Wu": {
+				"prerequisitos": ["Hon 16", "Respeito de Lin-Wu"],
+				"desc": "Pessoas desonradas o temem ainda mais. Benefício: como uma ação de movimento, qualquer criatura a até 9m com Honra 9 ou menor deve ser bem-sucedida em um teste de Vontade (CD 15 + seu bônus de Honra) ou ficará abalada por 1 rodada. Custo: 1 PM."
+			}
+		},
+		"Bushintau": {
+			"Bênção de Nozomi": {
+				"prerequisitos": ["Con 13"],
+				"desc": "Você é abençoado por Nozomi-hime, a Andarilha. Benefício: seu deslocamento aumenta em +3m."
+			},
+			"Bênção de Okoreiji": {
+				"prerequisitos": [],
+				"desc": "Você é abençoado por Okoreeji-sama, o Louco. Benefício: como uma reação, você pode reduzir o dano de uma violação de honra em –1 ponto (mínimo 1). Especial: este talento não se acumula com outros que reduzem violações de Honra."
+			},
+			"Bênção de Shunka'Shuuto": {
+				"prerequisitos": [],
+				"desc": "Você é abençoado por Shunka'Shuuto-hime, a Princesa das Quatro Estações. Benefício: a dificuldade para resistir a seus jutsus de Sabedoria aumenta em CD+2."
+			},
+			"Bênção de Sugora": {
+				"prerequisitos": ["Con 13"],
+				"desc": "Você é abençoado por Sugora-sama, o Rei dos Monstros. Benefício: para você, todas as armaduras médias são consideradas leves e todas as armaduras pesadas são consideradas médias."
+			},
+			"Bênção de Tai'yang": {
+				"prerequisitos": [],
+				"desc": "Você é abençoado por Tai'Yang-sama, o Príncipe do Sol. Benefício: você recebe +4 em testes de resistência contra jutsus e poderes de youkai."
+			},
+			"Bênção de Tanadora": {
+				"prerequisitos": ["Int 13"],
+				"desc": "Você é abençoado por Tanadora-sensei, a Professora. Benefício: você compreende todos os idiomas de todos os seres inteligentes (Int 3+)."
+			},
+			"Bênção de Tikauromu": {
+				"prerequisitos": ["For 13"],
+				"desc": "Você é abençoado por Tikauromu-sama, o Bisonte. Benefício: você pode usar seu bônus de Sabedoria em vez de Força em jutsus que exigem jogadas de ataque corpo-a-corpo."
+			},
+			"Bênção de Wang-ho": {
+				"prerequisitos": ["Des 13"],
+				"desc": "Você é abençoado por Wang-Ho-sama, o Sombrio. Benefício: a dificuldade para resistir a seus jutsus de Destreza aumenta em CD+2."
+			},
+			"Bênção de Yumeno": {
+				"prerequisitos": [],
+				"desc": "Você é abençoado por Yumeno-hime, a Princesa dos Sonhos. Benefício: você é acompanhado por uma criatura espiritual que funciona como um aliado iniciante, escolhido entre curandeiro, conselheiro, guardião ou perseguidor. O companheiro espiritual é telepaticamente ligado a você, segue todas as suas ordens e nunca pode ser destruído; caso morra, ele retorna em 1d4 rodadas."
+			},
+			"Canalização Seletiva": {
+				"prerequisitos": ["canalizar energia"],
+				"desc": "Você não fere nem restaura indiscriminadamente. Benefício: ao usar a habilidade de canalizar energia, você escolhe quais criaturas ao alcance são afetadas. Custo: +2 PM."
+			},
+			"Canalizar": {
+				"prerequisitos": ["canalizar energia"],
+				"desc": "Você canaliza energia com mais eficiência. Benefício: a dificuldade do teste de Vontade contra canalizar energia aumenta em CD+2."
+			},
+			"Canalizar o Vácuo": {
+				"prerequisitos": ["canalizar energia 5d6"],
+				"desc": "Você canaliza a energia da mescla entre luz e trevas. Benefício: quando você canaliza energia, pode escolher vácuo. Se o fizer, pode escolher quais criaturas afetadas sofrem dano de vácuo e quais recuperam pontos de vida."
+			},
+			"Companheiro Espiritual": {
+				"prerequisitos": [],
+				"desc": "Um espírito acompanha e obedece você. Benefício: você é acompanhado por uma criatura espiritual que funciona como um aliado iniciante (escolha entre curandeiro, conselheiro, guardião ou perseguidor). O companheiro espiritual é telepaticamente ligado a você, segue todas as suas ordens e nunca pode ser destruído; caso morra, ele retorna em 1d4 rodadas."
+			},
+			"Consertar a Alma": {
+				"prerequisitos": [
+					"canalizar energia ou capacidade de executar jutsus de luz"
+				],
+				"desc": "Você pode curar objetos sem vida. Afinal, você sabe que eles têm vida. Benefício: você pode canalizar energia ou usar jutsus de luz para curar pontos de vida de objetos e construtos (incluindo mashin). Se tiver todos os fragmentos de um item destruído e puder curar todos os seus PV, você pode restaurá-lo à sua condição normal."
+			},
+			"Energia Apavorante": {
+				"prerequisitos": ["canalizar energia 2d6"],
+				"desc": "Você pode canalizar energia para afastar criaturas. Benefício: ao canalizar energia, em vez de causar dano, você deixa as criaturas apavoradas pela cena caso falhem no teste de Vontade. Custo: +2 PM."
+			},
+			"Energia Dominadora": {
+				"prerequisitos": [
+					"canalizar energia 4d6",
+					"Energia Fascinante"
+				],
+				"desc": "Você pode dar ordens aos espíritos mais simplórios. Benefício: ao fascinar uma criatura (Int 1, 2 ou nula) com sua habilidade de canalizar energia, você ganha controle sobre ela, como no jutsu dominar mente. O nível somado de criaturas sob seu comando não pode exceder seu próprio nível. Escolher e usar este talento é uma violação de honra leve."
+			},
+			"Energia Fascinante": {
+				"prerequisitos": ["canalizar energia 2d6"],
+				"desc": "Você pode canalizar energia para fascinar criaturas. Benefício: ao canalizar energia, em vez de causar dano, você deixa as criaturas fascinadas pela duração da cena, caso falhem no teste de Vontade. Custo: +2 PM."
+			},
+			"Energia Aprimorado": {
+				"prerequisitos": [],
+				"desc": "Você canaliza energia com mais eficiência. (Nota: no PDF, este talento está listado como 'Energia Aprimorado' sem descrição adicional, mas provavelmente é idêntico a 'Canalizar' ou similar. Mantivemos o nome conforme a tabela.)"
+			},
+			"Espírito das Coisas": {
+				"prerequisitos": [],
+				"desc": "Você pode conversar com o espírito de um objeto e aprender sobre ele. Benefício: você recebe +4 em testes de Conhecimento, Ofício e Percepção ligados a um objeto que esteja tocando."
+			},
+			"Espírito dos Animais": {
+				"prerequisitos": [],
+				"desc": "Você pode conversar com o espírito de um animal. Benefício: você pode fazer testes de Diplomacia com animais, monstros e youkai com Int 1 ou 2. Normal: você só pode fazer testes de Diplomacia com criaturas inteligentes (Int 3+)."
+			},
+			"Segredos de Família": {
+				"prerequisitos": [],
+				"desc": "Você pode conquistar ou abalar alguém citando coisas (boas ou ruins) sobre seus ancestrais falecidos. Benefício: você recebe +2 em testes de Diplomacia, Intimidação e Obter Informação."
+			},
+			"Solidez Espiritual": {
+				"prerequisitos": [],
+				"desc": "Você acha o intangível bastante tangível. Benefício: você recebe +1 ponto de magia. Além disso, para você, criaturas incorpóreas são consideradas normais. Você pode tocá-las e atacá-las sem restrições. Normal: criaturas incorpóreas só podem ser afetadas por armas mágicas, jutsus ou outras criaturas incorpóreas, e têm 50% de chance de ignorar o ataque."
+			},
+			"Ver a Verdade": {
+				"prerequisitos": [],
+				"desc": "Você vê a forma verdadeira das coisas. Benefício: você recebe +1 em testes de Vontade. Além disso, sempre vê a forma real de criaturas ou objetos transformados ou ilusórios, seja através de jutsus ou outras habilidades."
+			},
+			"Ver o Invisível": {
+				"prerequisitos": [],
+				"desc": "Você deixa seus companheiros nervosos quando parece enxergar coisas que eles não conseguem... Benefício: você recebe +1 ponto de magia. Além disso, você enxerga objetos e criaturas invisíveis. Eles aparecem para você como formas translúcidas."
+			}
+		}
+	}
+}

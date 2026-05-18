@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerador de Recompensas — Império de Jade</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ░░░ HERO ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+<section id="hero" class="hero">
+
+  <div class="kanji-field" aria-hidden="true">
+    <span class="kanji" style="--x:8%;  --delay:0s;   --dur:18s; --size:1.8rem">玉</span>
+    <span class="kanji" style="--x:18%; --delay:3s;   --dur:22s; --size:1.2rem">龍</span>
+    <span class="kanji" style="--x:30%; --delay:7s;   --dur:16s; --size:2.4rem">剣</span>
+    <span class="kanji" style="--x:45%; --delay:1s;   --dur:20s; --size:1.5rem">金</span>
+    <span class="kanji" style="--x:57%; --delay:9s;   --dur:24s; --size:1rem">霊</span>
+    <span class="kanji" style="--x:68%; --delay:5s;   --dur:19s; --size:2rem">宝</span>
+    <span class="kanji" style="--x:78%; --delay:2s;   --dur:21s; --size:1.3rem">火</span>
+    <span class="kanji" style="--x:88%; --delay:11s;  --dur:17s; --size:1.6rem">水</span>
+    <span class="kanji" style="--x:13%; --delay:14s;  --dur:23s; --size:1rem">風</span>
+    <span class="kanji" style="--x:93%; --delay:6s;   --dur:15s; --size:2.2rem">土</span>
+    <span class="kanji" style="--x:52%; --delay:16s;  --dur:20s; --size:1.4rem">道</span>
+    <span class="kanji" style="--x:37%; --delay:4s;   --dur:26s; --size:1.1rem">武</span>
+  </div>
+
+  <div class="corner corner-tl" aria-hidden="true"></div>
+  <div class="corner corner-tr" aria-hidden="true"></div>
+  <div class="corner corner-bl" aria-hidden="true"></div>
+  <div class="corner corner-br" aria-hidden="true"></div>
+
+  <!-- Back button -->
+  <div class="back-button-wrap">
+    <a href="index.html" class="back-button">← Início</a>
+  </div>
+
+  <div class="hero-inner text-center">
+    <img id="logo" class="hero-logo no-interaction" src="assets/images/Logo.png" alt="Logo do Livro Império de Jade"/>
+
+    <div class="hero-text-box">
+      <h1 id="title" class="hero-title gradient-text">Gerador de Recompensas</h1>
+      <div class="title-divider" aria-hidden="true"><span>◆</span></div>
+      <h2 class="hero-subtitle">Bem-vindo ao Gerador de Recompensas do Império de Jade!</h2>
+      <p class="hero-p">
+        Adentre o mundo de aventuras e intrigas do Império de Jade, onde cada missão enfrentada reserva uma recompensa única e emocionante. Escolha o ND do inimigo derrotado e o algoritmo rolará os dados para você!
+      </p>
+      <a class="btn start-button" href="#generate">
+        <span class="btn-inner"><span class="btn-icon">⚔</span> Começar!</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true"><span>▾</span></div>
+</section>
+
+<!-- ░░░ GENERATOR ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+<section id="generate" class="generator-section">
+
+  <div class="section-wave" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C300,60 900,0 1200,30 L1200,0 L0,0 Z" fill="#f2ece0"/></svg>
+  </div>
+
+  <div class="container px-3 px-sm-4 py-5">
+    <div class="row g-4 align-items-start justify-content-center">
+
+      <!-- Selector -->
+      <div class="col-12 col-lg-4">
+        <div class="jade-card selector-card">
+          <div class="jade-card-inner">
+            <div class="card-ornament-top" aria-hidden="true">✦ ─── ✦</div>
+            <h4 class="selector-title">Nível de Dificuldade (ND)</h4>
+            <div class="nd-select-wrap">
+              <select id="ndSelector" class="nd-select" aria-label="Selecione o ND">
+                <option value="1/3" selected>ND 1/3</option>
+                <option value="1/2">ND 1/2</option>
+                <option value="1">ND 1</option>
+                <option value="2">ND 2</option>
+                <option value="3">ND 3</option>
+                <option value="4">ND 4</option>
+                <option value="5">ND 5</option>
+                <option value="6">ND 6</option>
+                <option value="7">ND 7</option>
+                <option value="8">ND 8</option>
+                <option value="9">ND 9</option>
+                <option value="10">ND 10</option>
+                <option value="11">ND 11</option>
+                <option value="12">ND 12</option>
+                <option value="13">ND 13</option>
+                <option value="14">ND 14</option>
+                <option value="15">ND 15</option>
+                <option value="16">ND 16</option>
+                <option value="17">ND 17</option>
+                <option value="18">ND 18</option>
+                <option value="19">ND 19</option>
+                <option value="20">ND 20</option>
+              </select>
+              <span class="nd-select-arrow" aria-hidden="true">▾</span>
+            </div>
+            <button id="generateButton" class="generate-button" onclick="triggerGenerate()">
+              <span class="gen-btn-dice" id="btnDice" aria-hidden="true">⚄</span>
+              <span id="btnText">Rolar Dados</span>
+            </button>
+            <div class="card-ornament-bottom" aria-hidden="true">✦ ─── ✦</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="col-12 col-lg-8">
+        <div class="jade-card result-card">
+          <div class="jade-card-inner">
+            <div class="card-ornament-top" aria-hidden="true">✦ ─── ✦</div>
+            <h3 class="result-title">Resultado</h3>
+            <div id="result">
+              <p class="result-placeholder">Selecione o ND e clique em "Rolar Dados" para obter a recompensa.</p>
+            </div>
+            <div class="card-ornament-bottom" aria-hidden="true">✦ ─── ✦</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ FOOTER ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+<footer class="site-footer">
+  <div class="footer-divider" aria-hidden="true">◆ ─── 玉 ─── ◆</div>
+  <nav class="footer-nav">
+    <a href="index.html">Início</a>
+    <span aria-hidden="true">·</span>
+    <a href="ficha.html">Criador de Fichas</a>
+    <span aria-hidden="true">·</span>
+    <a href="gerador.html">Gerador de Recompensas</a>
+  </nav>
+  <p class="footer-copy">
+    Império de Jade pertence a <a href="https://jamboeditora.com.br">Jambo Editora</a>.
+    Todos os direitos são reservados a <a href="https://jamboeditora.com.br">Jambo Editora</a>.
+  </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="scripts/generator.js"></script>
+<script src="scripts/script.js"></script>
+<script>
+const DICE_FACES = ["⚀","⚁","⚂","⚃","⚄","⚅"];
+
+function triggerGenerate() {
+  const btn  = document.getElementById("generateButton");
+  const dice = document.getElementById("btnDice");
+  const txt  = document.getElementById("btnText");
+
+  btn.disabled = true;
+  txt.textContent = "Rolando…";
+
+  let i = 0;
+  const iv = setInterval(() => { dice.textContent = DICE_FACES[i++ % 6]; }, 90);
+
+  setTimeout(() => {
+    clearInterval(iv);
+    dice.textContent = DICE_FACES[Math.floor(Math.random() * 6)];
+    getND();
+    txt.textContent = "Rolar Dados";
+    btn.disabled = false;
+
+    const resultEl = document.getElementById("result");
+    resultEl.classList.remove("result-reveal");
+    void resultEl.offsetWidth;
+    resultEl.classList.add("result-reveal");
+
+    resultEl.querySelectorAll(".roll-step").forEach((s, idx) => {
+      s.style.cssText = `opacity:0;transform:translateX(-8px);transition:opacity .25s ease ${idx*40}ms,transform .25s ease ${idx*40}ms`;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        s.style.opacity = "1";
+        s.style.transform = "translateX(0)";
+      }));
+    });
+  }, 700);
+}
+</script>
+</body>
+</html>
